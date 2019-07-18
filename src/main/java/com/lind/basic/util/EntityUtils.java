@@ -1,7 +1,11 @@
 package com.lind.basic.util;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import javax.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
@@ -91,5 +95,46 @@ public class EntityUtils {
       ReflectionUtils.invokeMethod(initUpdateMethod, t);
     }
     return t;
+  }
+
+  /**
+   * Map转成实体对象，注意类必须是public的.
+   *
+   * @param map   map实体对象包含属性
+   * @param clazz 实体对象类型
+   * @return
+   */
+  public static <T> T convertMapToObject(Map<String, Object> map, Class<T> clazz) {
+    if (map == null) {
+      return null;
+    }
+    T obj = null;
+    try {
+      obj = clazz.newInstance();
+
+      Field[] fields = obj.getClass().getDeclaredFields();
+      for (Field field : fields) {
+        int mod = field.getModifiers();
+        if (Modifier.isStatic(mod) || Modifier.isFinal(mod)) {
+          continue;
+        }
+        field.setAccessible(true);
+        String filedTypeName = field.getType().getName();
+        if (filedTypeName.equalsIgnoreCase("java.util.date")) {
+          String datetimestamp = String.valueOf(map.get(field.getName()));
+          if (datetimestamp.equalsIgnoreCase("null")) {
+            field.set(obj, null);
+          } else {
+            field.set(obj, new Date(Long.parseLong(datetimestamp)));
+          }
+        } else {
+          String v = map.get(field.getName()).toString();
+          field.set(obj, map.get(field.getName()));
+        }
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return obj;
   }
 }
