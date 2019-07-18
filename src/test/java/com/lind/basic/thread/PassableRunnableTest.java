@@ -1,4 +1,4 @@
-package com.lind.basic.util;
+package com.lind.basic.thread;
 
 import com.lind.basic.BaseTest;
 import org.junit.Test;

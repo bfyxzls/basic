@@ -1,5 +1,6 @@
-package com.lind.basic.util;
+package com.lind.basic.grammar;
 
+import com.lind.basic.util.CommonUtils;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;

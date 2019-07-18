@@ -1,4 +1,4 @@
-package com.lind.basic.util;
+package com.lind.basic.thread;
 
 import java.time.LocalDateTime;
 import java.util.concurrent.ExecutorService;

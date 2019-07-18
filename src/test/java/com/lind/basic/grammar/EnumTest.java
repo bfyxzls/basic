@@ -1,9 +1,10 @@
-package com.lind.basic.util;
+package com.lind.basic.grammar;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.lind.basic.enums.BaseEnum;
 import com.lind.basic.enums.LindStatus;
+import com.lind.basic.util.EnumUtils;
 import java.util.Arrays;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;

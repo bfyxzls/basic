@@ -1,6 +1,7 @@
-package com.lind.basic.util;
+package com.lind.basic.grammar;
 
 import com.alibaba.fastjson.JSONObject;
+import com.lind.basic.util.ReplaceStarUtils;
 import java.time.LocalDateTime;
 import org.junit.Assert;
 import org.junit.Test;
@@ -19,6 +20,23 @@ public class StringTest {
   public void stringTrim() {
     String str = "135 2197    29 91  ";
     Assert.assertEquals("13521972991", str.replaceAll("\\s*", ""));
+  }
+
+
+  @Test
+  public void stringReplace() {
+    String str = "2019-09";
+    Assert.assertEquals("2019.09", str.replaceAll("-", "."));
+  }
+
+  @Test
+  public void stringAppend() {
+    StringBuffer stringBuffer = new StringBuffer();
+    stringBuffer.append("2019.01");
+    stringBuffer.append("-");
+    stringBuffer.append("2019.02");
+
+    System.out.println(stringBuffer.toString());
   }
 
   @Test

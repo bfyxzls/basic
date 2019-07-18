@@ -1,4 +1,4 @@
-package com.lind.basic.util;
+package com.lind.basic.grammar;
 
 import com.google.common.base.Predicate;
 import java.util.ArrayList;

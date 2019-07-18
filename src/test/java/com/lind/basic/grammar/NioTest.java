@@ -1,4 +1,4 @@
-package com.lind.basic.util;
+package com.lind.basic.grammar;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
