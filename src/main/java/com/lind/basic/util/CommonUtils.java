@@ -2,7 +2,9 @@ package com.lind.basic.util;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
+import java.math.RoundingMode;
 import java.security.MessageDigest;
+import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
@@ -248,5 +250,78 @@ public class CommonUtils {
   public static <T> T toObject(Object object, Class<T> type) {
     return JSON.parseObject(
         JSON.toJSONString(object), type);
+  }
+
+  /**
+   * 时间戳转日期格式.
+   *
+   * @param seconds .
+   * @param format  .
+   * @return
+   */
+  public static String timeStamp2Date(Long seconds, String format) {
+    if (seconds == null || seconds.equals(0L)) {
+      return "";
+    }
+
+    if (org.apache.commons.lang.StringUtils.isEmpty(format)) {
+      format = "yyyy-MM-dd'T'HH:mm:ss";
+    }
+    SimpleDateFormat sdf = new SimpleDateFormat(format);
+    return sdf.format(new Date(seconds));
+  }
+
+  /**
+   * 四舍五入.
+   *
+   * @param value .
+   * @param digit .
+   * @return
+   */
+  public static String round(double value, int digit) {
+    NumberFormat nf = NumberFormat.getNumberInstance();
+    // 保留两位小数
+    nf.setMaximumFractionDigits(digit);
+    nf.setRoundingMode(RoundingMode.DOWN);
+    return nf.format(value);
+
+  }
+
+  /**
+   * 字符数组转Long数组.
+   *
+   * @param param .
+   * @return
+   */
+  public static Long[] toLongArray(String[] param) {
+    Long[] num = new Long[param.length];
+    for (int idx = 0; idx < param.length; idx++) {
+      num[idx] = Long.parseLong(param[idx]);
+    }
+    return num;
+  }
+
+  /**
+   * 字符数组转Integer数组.
+   *
+   * @param param .
+   * @return
+   */
+  public static Integer[] toIntegerArray(String[] param) {
+    Integer[] num = new Integer[param.length];
+    for (int idx = 0; idx < param.length; idx++) {
+      num[idx] = Integer.parseInt(param[idx]);
+    }
+    return num;
+  }
+
+  /**
+   * 长型型转整型.
+   *
+   * @param val .
+   * @return
+   */
+  public static Integer toInteger(Long val) {
+    return Integer.parseInt(val.toString());
   }
 }

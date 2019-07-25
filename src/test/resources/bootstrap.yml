@@ -5,6 +5,9 @@ spring:
         platform: h2
         driverClassName: org.h2.Driver
         url: jdbc:h2:mem:testdb
+  sleuth:
+    sampler:
+      probability: 1.0 #抽样
 #  datasource:
 #        driver-class-name: com.mysql.jdbc.Driver
 #        url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&serverTimezone=Hongkong
@@ -48,3 +51,12 @@ mybatis-plus:
     cache-enabled: false
 
 author: zzl
+
+logging:
+  level:
+    #org.springframework.web: debug #对这些包进行日志
+    #org.springframework.security: DEBUG
+    com.lind.basic: INFO
+  path: logs/ #日志持久化的文件位置
+  file:
+    max-size: 1GB
