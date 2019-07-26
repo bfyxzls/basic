@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
+import java.util.Optional;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -67,6 +68,12 @@ public class CommonUtilsTest {
     for (Integer i : intArray) {
       System.out.println("i=" + i);
     }
+  }
+
+  @Test
+  public void optional() {
+    Integer a = null;
+    System.out.println(Optional.ofNullable(a).orElse(1));
   }
 
   @AllArgsConstructor
