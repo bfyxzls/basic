@@ -3,6 +3,8 @@ package com.lind.basic.util;
 import com.google.common.collect.ImmutableMap;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import lombok.AllArgsConstructor;
@@ -74,6 +76,12 @@ public class CommonUtilsTest {
   public void optional() {
     Integer a = null;
     System.out.println(Optional.ofNullable(a).orElse(1));
+  }
+
+  @Test
+  public void limit() {
+    List<String> arr = Arrays.asList("1", "2", "3");
+    arr.stream().limit(10).forEach(i -> System.out.println(i));
   }
 
   @AllArgsConstructor
