@@ -17,6 +17,12 @@ import org.springframework.util.ReflectionUtils;
  */
 @Slf4j
 public class EntityUtils {
+  /**
+   * Suppress default constructor for noninstantiability.
+   */
+  private EntityUtils() {
+    throw new AssertionError();
+  }
 
   /**
    * 类属性复制工具方法.

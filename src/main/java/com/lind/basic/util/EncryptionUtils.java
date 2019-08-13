@@ -7,6 +7,13 @@ import sun.misc.BASE64Encoder;
 
 public class EncryptionUtils {
   /**
+   * Suppress default constructor for noninstantiability.
+   */
+  private EncryptionUtils() {
+    throw new AssertionError();
+  }
+
+  /**
    * BASE64解密.
    *
    * @param key .

@@ -11,6 +11,14 @@ import java.util.concurrent.ThreadLocalRandom;
 public class RandomUtils {
 
   /**
+   * Suppress default constructor for noninstantiability.
+   */
+  private RandomUtils() {
+    throw new AssertionError();
+  }
+
+
+  /**
    * 双重校验锁获取一个Random单例.
    */
   public static ThreadLocalRandom getRandom() {

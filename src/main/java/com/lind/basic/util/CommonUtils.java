@@ -24,6 +24,13 @@ import org.apache.commons.lang3.StringUtils;
 public class CommonUtils {
 
   /**
+   * Suppress default constructor for noninstantiability.
+   */
+  private CommonUtils() {
+    throw new AssertionError();
+  }
+
+  /**
    * md5 加密.
    *
    * @return

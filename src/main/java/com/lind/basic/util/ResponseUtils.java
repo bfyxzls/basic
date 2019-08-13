@@ -17,9 +17,13 @@ import org.springframework.http.ResponseEntity;
 @Builder
 public class ResponseUtils {
 
+  /**
+   * Suppress default constructor for noninstantiability.
+   */
   private ResponseUtils() {
+    throw new AssertionError();
   }
-
+  
   public static <T> ResponseEntity<?> okMessage(String message) {
     return ResponseEntity.ok(buildResponseBody(200, message, null));
   }
