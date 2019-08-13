@@ -18,10 +18,8 @@ public class MqTest extends BaseTest {
    */
   @Test
   public void publisherTest() throws Exception {
-    for (int i = 0; i < 5; i++) {
-      publisher.publish("hello lind");
-    }
-    TimeUnit.MILLISECONDS.sleep(5000);
+    publisher.publish("hello lind");
+    TimeUnit.MILLISECONDS.sleep(6000);//耗时3分钟
 
   }
 }
