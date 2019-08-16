@@ -1,6 +1,6 @@
 package com.lind.basic.util;
 
-import java.awt.*;
+import java.awt.Color;
 import java.io.Serializable;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 

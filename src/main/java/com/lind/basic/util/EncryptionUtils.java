@@ -40,10 +40,10 @@ public class EncryptionUtils {
    * @param len      长度
    * @return
    */
-  public static String MD5(String inputStr, int len) {
+  public static String md5(String inputStr, int len) {
     BigInteger bigInteger = null;
     try {
-      MessageDigest md = MessageDigest.getInstance("MD5");
+      MessageDigest md = MessageDigest.getInstance("md5");
       byte[] inputData = inputStr.getBytes();
       md.update(inputData);
       bigInteger = new BigInteger(md.digest());
@@ -59,8 +59,8 @@ public class EncryptionUtils {
    * @param inputStr 明文
    * @return
    */
-  public static String MD5(String inputStr) {
-    return MD5(inputStr, 32);
+  public static String md5(String inputStr) {
+    return md5(inputStr, 32);
   }
 
   /**
@@ -69,11 +69,11 @@ public class EncryptionUtils {
    * @param inputStr 明文
    * @return
    */
-  public static String SHA(String inputStr) {
+  public static String sha(String inputStr) {
     BigInteger sha = null;
     byte[] inputData = inputStr.getBytes();
     try {
-      MessageDigest messageDigest = MessageDigest.getInstance("SHA");
+      MessageDigest messageDigest = MessageDigest.getInstance("sha");
       messageDigest.update(inputData);
       sha = new BigInteger(messageDigest.digest());
     } catch (Exception e) {

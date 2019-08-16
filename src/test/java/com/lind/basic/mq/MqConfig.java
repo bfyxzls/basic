@@ -22,6 +22,8 @@ public class MqConfig {
   public static final String LIND_QUEUE_ROUTEKEY = "test.basic.*";
   public static final String LIND_QUEUE_ROUTEKEY1 = "test.basic.a1";
   public static final String LIND_QUEUE_ROUTEKEY2 = "test.basic.a2";
+  public static final String LIND_QUEUE_Long = "test.dudu.long";
+
   /**
    * 单位为微秒.
    */
@@ -150,5 +152,17 @@ public class MqConfig {
   @Bean
   public Binding product2QueueBinding() {
     return BindingBuilder.bind(product2Queue()).to(fanoutExchange());
+  }
+
+  @Bean
+  public Queue longQueue() {
+    return new Queue(LIND_QUEUE_Long);
+  }
+
+  @Bean
+  public Binding bindLongQueue() {
+    return BindingBuilder.bind(longQueue())
+        .to(lindExchange())
+        .with(LIND_QUEUE_Long);
   }
 }

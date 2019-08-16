@@ -50,7 +50,7 @@ public class CommonUtils {
     try {
       byte[] btInput = str.getBytes("GBK");
       // 获得MD5摘要算法的 MessageDigest 对象
-      MessageDigest mdInst = MessageDigest.getInstance("MD5");
+      MessageDigest mdInst = MessageDigest.getInstance("md5");
       // 使用指定的字节更新摘要
       mdInst.update(btInput);
       // 获得密文

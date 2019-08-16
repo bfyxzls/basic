@@ -22,4 +22,18 @@ public class MqTest extends BaseTest {
     TimeUnit.MILLISECONDS.sleep(6000);//耗时3分钟
 
   }
+
+  /**
+   * 连续发布消息.
+   *
+   * @throws Exception .
+   */
+  @Test
+  public void publisherLoopTest() throws Exception {
+    for (int i = 0; i < 100; i++) {
+      publisher.longJobPublish("long lind " + i);
+    }
+    TimeUnit.MILLISECONDS.sleep(6 * 1000);
+
+  }
 }

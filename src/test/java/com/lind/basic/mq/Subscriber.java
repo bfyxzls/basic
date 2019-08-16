@@ -62,4 +62,17 @@ public class Subscriber {
   public void product2(String data) {
     System.out.println(data);
   }
+
+
+  /**
+   * 耗时的任务.
+   *
+   * @param data .
+   * @throws Exception .
+   */
+  @RabbitListener(queues = MqConfig.LIND_QUEUE_Long)
+  public void longJob(String data) throws Exception {
+    System.out.println(data);
+    Thread.sleep(1000);
+  }
 }

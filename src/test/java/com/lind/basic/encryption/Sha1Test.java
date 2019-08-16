@@ -2,13 +2,12 @@ package com.lind.basic.encryption;
 
 import com.lind.basic.util.EncryptionUtils;
 import com.lind.basic.util.HmacUtils;
-import java.nio.charset.Charset;
 import org.junit.Test;
 
 public class Sha1Test {
   @Test
   public void sha1() {
-    System.out.println(EncryptionUtils.SHA("hello"));
+    System.out.println(EncryptionUtils.sha("hello"));
   }
 
   @Test

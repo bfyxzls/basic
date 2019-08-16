@@ -91,7 +91,7 @@ public class NioTest {
     ThreadB b = new ThreadB(lock);
     b.start();
 
-    Thread.sleep(20000);
+    Thread.sleep(200);
   }
 
 

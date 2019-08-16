@@ -1,6 +1,6 @@
 package com.lind.basic.util;
 
-import java.awt.*;
+import java.awt.Color;
 import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
 import java.io.BufferedOutputStream;

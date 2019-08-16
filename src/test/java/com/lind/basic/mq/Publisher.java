@@ -34,5 +34,11 @@ public class Publisher {
       e.printStackTrace();
     }
   }
+
+  public void longJobPublish(String message) {
+    rabbitTemplate
+        .convertAndSend(MqConfig.LIND_EXCHANGE, MqConfig.LIND_QUEUE_Long,
+            message);
+  }
 }
 
