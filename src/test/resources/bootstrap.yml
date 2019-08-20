@@ -60,3 +60,6 @@ logging:
   path: logs/ #日志持久化的文件位置
   file:
     max-size: 1GB
+
+spring.data.elasticsearch.cluster-nodes: localhost:9300 # Elasticsearch 服务地址
+spring.data.elasticsearch.properties.transport.tcp.connect_timeout: 120s # 设置连接超时时间

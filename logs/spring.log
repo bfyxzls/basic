@@ -22,3 +22,316 @@
 2019-08-16 11:03:10.495  INFO 66893 --- [Thread-30] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:03:10.491+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.170.53, "nodename nor servname provided, or not known"), (192.168.170.53, "nodename nor servname provided, or not known") ]
 2019-08-16 11:04:10.689  INFO 66893 --- [Thread-67] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:04:10.686+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.170.53, "nodename nor servname provided, or not known"), (192.168.170.53, "nodename nor servname provided, or not known") ]
 2019-08-16 11:04:10.689  INFO 66893 --- [Thread-40] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:04:10.685+0800 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.170.53, "nodename nor servname provided, or not known"), (192.168.170.53, "nodename nor servname provided, or not known") ]
+2019-08-16 11:09:09.338  INFO 66893 --- [Thread-40] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.334+0800 I CONTROL  [signalProcessingThread] got signal 2 (Interrupt: 2), will terminate after current cmd ends
+2019-08-16 11:09:09.340  INFO 66893 --- [Thread-30] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.333+0800 I CONTROL  [signalProcessingThread] got signal 2 (Interrupt: 2), will terminate after current cmd ends
+2019-08-16 11:09:09.341  INFO 66893 --- [Thread-30] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.333+0800 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2019-08-16 11:09:09.341  INFO 66893 --- [Thread-5] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.332+0800 I CONTROL  [signalProcessingThread] got signal 2 (Interrupt: 2), will terminate after current cmd ends
+2019-08-16 11:09:09.341  INFO 66893 --- [Thread-5] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.333+0800 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2019-08-16 11:09:09.341  INFO 66893 --- [Thread-67] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.333+0800 I CONTROL  [signalProcessingThread] got signal 2 (Interrupt: 2), will terminate after current cmd ends
+2019-08-16 11:09:09.340  INFO 66893 --- [Thread-40] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.335+0800 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2019-08-16 11:09:09.341  INFO 66893 --- [Thread-67] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.334+0800 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2019-08-16 11:09:09.373  INFO 66893 --- [Thread-5] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.347+0800 I CONTROL  [signalProcessingThread] now exiting
+2019-08-16 11:09:09.375  INFO 66893 --- [Thread-40] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.347+0800 I CONTROL  [signalProcessingThread] now exiting
+2019-08-16 11:09:09.341  INFO 66893 --- [Thread-52] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.332+0800 I CONTROL  [signalProcessingThread] got signal 2 (Interrupt: 2), will terminate after current cmd ends
+2019-08-16 11:09:09.388  INFO 66893 --- [Thread-5] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.347+0800 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2019-08-16 11:09:09.388  INFO 66893 --- [Thread-30] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.346+0800 I CONTROL  [signalProcessingThread] now exiting
+2019-08-16 11:09:09.403  INFO 66893 --- [Thread-67] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.346+0800 I CONTROL  [signalProcessingThread] now exiting
+2019-08-16 11:09:09.424  INFO 66893 --- [Thread-40] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.347+0800 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2019-08-16 11:09:09.445  INFO 66893 --- [Thread-52] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.333+0800 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2019-08-16 11:09:09.460  INFO 66893 --- [Thread-52] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.346+0800 I CONTROL  [signalProcessingThread] now exiting
+2019-08-16 11:09:09.448  INFO 66893 --- [Thread-30] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.346+0800 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2019-08-16 11:09:09.445  INFO 66893 --- [Thread-5] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.347+0800 I NETWORK  [signalProcessingThread] closing listening socket: 5
+2019-08-16 11:09:09.450  INFO 66893 --- [Thread-67] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.346+0800 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2019-08-16 11:09:09.459  INFO 66893 --- [Thread-40] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.347+0800 I NETWORK  [signalProcessingThread] closing listening socket: 5
+2019-08-16 11:09:09.497  INFO 66893 --- [Thread-67] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.346+0800 I NETWORK  [signalProcessingThread] closing listening socket: 5
+2019-08-16 11:09:09.461  INFO 66893 --- [Thread-52] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.346+0800 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2019-08-16 11:09:09.471  INFO 66893 --- [Thread-30] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.346+0800 I NETWORK  [signalProcessingThread] closing listening socket: 5
+2019-08-16 11:09:09.535  INFO 66893 --- [Thread-30] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.346+0800 I NETWORK  [signalProcessingThread] closing listening socket: 6
+2019-08-16 11:09:09.497  INFO 66893 --- [Thread-5] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.347+0800 I NETWORK  [signalProcessingThread] closing listening socket: 6
+2019-08-16 11:09:09.512  INFO 66893 --- [Thread-40] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.347+0800 I NETWORK  [signalProcessingThread] closing listening socket: 6
+2019-08-16 11:09:09.571  INFO 66893 --- [Thread-40] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.347+0800 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-60146.sock
+2019-08-16 11:09:09.583  INFO 66893 --- [Thread-40] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.348+0800 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
+2019-08-16 11:09:09.517  INFO 66893 --- [Thread-67] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.346+0800 I NETWORK  [signalProcessingThread] closing listening socket: 6
+2019-08-16 11:09:09.531  INFO 66893 --- [Thread-52] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.346+0800 I NETWORK  [signalProcessingThread] closing listening socket: 5
+2019-08-16 11:09:09.598  INFO 66893 --- [Thread-52] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.346+0800 I NETWORK  [signalProcessingThread] closing listening socket: 6
+2019-08-16 11:09:09.544  INFO 66893 --- [Thread-8] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@7997b197: startup date [Thu Aug 15 15:54:27 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@130dca52
+2019-08-16 11:09:09.610  INFO 66893 --- [Thread-52] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.346+0800 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-60186.sock
+2019-08-16 11:09:09.544  INFO 66893 --- [Thread-35] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@534d0e20: startup date [Thu Aug 15 15:54:41 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@44ddb518
+2019-08-16 11:09:09.544  INFO 66893 --- [Thread-43] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@6694fb1b: startup date [Thu Aug 15 15:54:45 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1c4aa701
+2019-08-16 11:09:09.545  INFO 66893 --- [Thread-72] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@c7aac7c: startup date [Thu Aug 15 15:55:29 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@d082916
+2019-08-16 11:09:09.544  INFO 66893 --- [Thread-58] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4803bf73: startup date [Thu Aug 15 15:54:50 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1e4a4ed5
+2019-08-16 11:09:09.547  INFO 66893 --- [Thread-30] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.346+0800 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-60120.sock
+2019-08-16 11:09:09.558  INFO 66893 --- [Thread-5] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.347+0800 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-60091.sock
+2019-08-16 11:09:09.594  INFO 66893 --- [Thread-40] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.348+0800 I NETWORK  [signalProcessingThread] shutdown: going to close sockets...
+2019-08-16 11:09:09.596  INFO 66893 --- [Thread-67] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.346+0800 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-60232.sock
+2019-08-16 11:09:09.611  INFO 66893 --- [Thread-52] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.347+0800 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
+2019-08-16 11:09:09.650  INFO 66893 --- [Thread-30] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.347+0800 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
+2019-08-16 11:09:09.714  INFO 66893 --- [Thread-52] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.347+0800 I NETWORK  [signalProcessingThread] shutdown: going to close sockets...
+2019-08-16 11:09:09.714  INFO 66893 --- [Thread-30] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.347+0800 I NETWORK  [signalProcessingThread] shutdown: going to close sockets...
+2019-08-16 11:09:09.715  INFO 66893 --- [Thread-30] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.348+0800 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2019-08-16 11:09:09.715  INFO 66893 --- [Thread-30] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.350+0800 I NETWORK  [conn1] end connection 127.0.0.1:60122 (0 connections now open)
+2019-08-16 11:09:09.653  WARN 66893 --- [Thread-39] d.flapdoodle.embed.mongo.runtime.Mongod  : sendShutdown /127.0.0.1:60146
+
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_181]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_181]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_181]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_181]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_181]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_181]
+	at de.flapdoodle.embed.mongo.runtime.Mongod.sendShutdown(Mongod.java:87) ~[de.flapdoodle.embed.mongo-2.0.3.jar:na]
+	at de.flapdoodle.embed.mongo.AbstractMongoProcess.sendStopToMongoInstance(AbstractMongoProcess.java:133) [de.flapdoodle.embed.mongo-2.0.3.jar:na]
+	at de.flapdoodle.embed.mongo.AbstractMongoProcess.stopInternal(AbstractMongoProcess.java:107) [de.flapdoodle.embed.mongo-2.0.3.jar:na]
+	at de.flapdoodle.embed.process.runtime.AbstractProcess.stop(AbstractProcess.java:177) [de.flapdoodle.embed.process-2.0.2.jar:na]
+	at de.flapdoodle.embed.process.runtime.Executable.stop(Executable.java:80) [de.flapdoodle.embed.process-2.0.2.jar:na]
+	at de.flapdoodle.embed.process.runtime.Executable$JobKiller.run(Executable.java:97) [de.flapdoodle.embed.process-2.0.2.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_181]
+
+2019-08-16 11:09:09.652  WARN 66893 --- [Thread-29] d.flapdoodle.embed.mongo.runtime.Mongod  : sendShutdown /127.0.0.1:60120
+
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_181]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_181]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_181]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_181]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_181]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_181]
+	at de.flapdoodle.embed.mongo.runtime.Mongod.sendShutdown(Mongod.java:87) ~[de.flapdoodle.embed.mongo-2.0.3.jar:na]
+	at de.flapdoodle.embed.mongo.AbstractMongoProcess.sendStopToMongoInstance(AbstractMongoProcess.java:133) [de.flapdoodle.embed.mongo-2.0.3.jar:na]
+	at de.flapdoodle.embed.mongo.AbstractMongoProcess.stopInternal(AbstractMongoProcess.java:107) [de.flapdoodle.embed.mongo-2.0.3.jar:na]
+	at de.flapdoodle.embed.process.runtime.AbstractProcess.stop(AbstractProcess.java:177) [de.flapdoodle.embed.process-2.0.2.jar:na]
+	at de.flapdoodle.embed.process.runtime.Executable.stop(Executable.java:80) [de.flapdoodle.embed.process-2.0.2.jar:na]
+	at de.flapdoodle.embed.process.runtime.Executable$JobKiller.run(Executable.java:97) [de.flapdoodle.embed.process-2.0.2.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_181]
+
+2019-08-16 11:09:09.653  WARN 66893 --- [Thread-4] d.flapdoodle.embed.mongo.runtime.Mongod  : sendShutdown /127.0.0.1:60091
+
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_181]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_181]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_181]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_181]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_181]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_181]
+	at de.flapdoodle.embed.mongo.runtime.Mongod.sendShutdown(Mongod.java:87) ~[de.flapdoodle.embed.mongo-2.0.3.jar:na]
+	at de.flapdoodle.embed.mongo.AbstractMongoProcess.sendStopToMongoInstance(AbstractMongoProcess.java:133) [de.flapdoodle.embed.mongo-2.0.3.jar:na]
+	at de.flapdoodle.embed.mongo.AbstractMongoProcess.stopInternal(AbstractMongoProcess.java:107) [de.flapdoodle.embed.mongo-2.0.3.jar:na]
+	at de.flapdoodle.embed.process.runtime.AbstractProcess.stop(AbstractProcess.java:177) [de.flapdoodle.embed.process-2.0.2.jar:na]
+	at de.flapdoodle.embed.process.runtime.Executable.stop(Executable.java:80) [de.flapdoodle.embed.process-2.0.2.jar:na]
+	at de.flapdoodle.embed.process.runtime.Executable$JobKiller.run(Executable.java:97) [de.flapdoodle.embed.process-2.0.2.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_181]
+
+2019-08-16 11:09:09.666  INFO 66893 --- [Thread-5] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.348+0800 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
+2019-08-16 11:09:09.653  WARN 66893 --- [Thread-51] d.flapdoodle.embed.mongo.runtime.Mongod  : sendShutdown /127.0.0.1:60186
+
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_181]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_181]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_181]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_181]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_181]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_181]
+	at de.flapdoodle.embed.mongo.runtime.Mongod.sendShutdown(Mongod.java:87) ~[de.flapdoodle.embed.mongo-2.0.3.jar:na]
+	at de.flapdoodle.embed.mongo.AbstractMongoProcess.sendStopToMongoInstance(AbstractMongoProcess.java:133) [de.flapdoodle.embed.mongo-2.0.3.jar:na]
+	at de.flapdoodle.embed.mongo.AbstractMongoProcess.stopInternal(AbstractMongoProcess.java:107) [de.flapdoodle.embed.mongo-2.0.3.jar:na]
+	at de.flapdoodle.embed.process.runtime.AbstractProcess.stop(AbstractProcess.java:177) [de.flapdoodle.embed.process-2.0.2.jar:na]
+	at de.flapdoodle.embed.process.runtime.Executable.stop(Executable.java:80) [de.flapdoodle.embed.process-2.0.2.jar:na]
+	at de.flapdoodle.embed.process.runtime.Executable$JobKiller.run(Executable.java:97) [de.flapdoodle.embed.process-2.0.2.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_181]
+
+2019-08-16 11:09:09.653  WARN 66893 --- [Thread-66] d.flapdoodle.embed.mongo.runtime.Mongod  : sendShutdown /127.0.0.1:60232
+
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_181]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_181]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_181]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_181]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_181]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_181]
+	at de.flapdoodle.embed.mongo.runtime.Mongod.sendShutdown(Mongod.java:87) ~[de.flapdoodle.embed.mongo-2.0.3.jar:na]
+	at de.flapdoodle.embed.mongo.AbstractMongoProcess.sendStopToMongoInstance(AbstractMongoProcess.java:133) [de.flapdoodle.embed.mongo-2.0.3.jar:na]
+	at de.flapdoodle.embed.mongo.AbstractMongoProcess.stopInternal(AbstractMongoProcess.java:107) [de.flapdoodle.embed.mongo-2.0.3.jar:na]
+	at de.flapdoodle.embed.process.runtime.AbstractProcess.stop(AbstractProcess.java:177) [de.flapdoodle.embed.process-2.0.2.jar:na]
+	at de.flapdoodle.embed.process.runtime.Executable.stop(Executable.java:80) [de.flapdoodle.embed.process-2.0.2.jar:na]
+	at de.flapdoodle.embed.process.runtime.Executable$JobKiller.run(Executable.java:97) [de.flapdoodle.embed.process-2.0.2.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_181]
+
+2019-08-16 11:09:09.695  INFO 66893 --- [cluster-ClusterId{value='5d550fc99b9be4054d06d692', description='null'}-localhost:60146] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:60146
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:62) ~[mongodb-driver-core-3.6.4.jar:na]
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:126) ~[mongodb-driver-core-3.6.4.jar:na]
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:128) ~[mongodb-driver-core-3.6.4.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_181]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_181]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_181]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_181]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_181]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_181]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_181]
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:59) ~[mongodb-driver-core-3.6.4.jar:na]
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:57) ~[mongodb-driver-core-3.6.4.jar:na]
+	... 3 common frames omitted
+
+2019-08-16 11:09:09.694  INFO 66893 --- [Thread-40] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.349+0800 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2019-08-16 11:09:09.706  INFO 66893 --- [Thread-67] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.347+0800 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
+2019-08-16 11:09:09.715  INFO 66893 --- [Thread-30] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.705+0800 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2019-08-16 11:09:09.716  INFO 66893 --- [Thread-52] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.348+0800 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2019-08-16 11:09:09.741  INFO 66893 --- [Thread-5] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.348+0800 I NETWORK  [signalProcessingThread] shutdown: going to close sockets...
+2019-08-16 11:09:09.744  INFO 66893 --- [Thread-67] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.347+0800 I NETWORK  [signalProcessingThread] shutdown: going to close sockets...
+2019-08-16 11:09:09.760  INFO 66893 --- [Thread-52] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.351+0800 I NETWORK  [conn1] end connection 127.0.0.1:60191 (1 connection now open)
+2019-08-16 11:09:09.742  INFO 66893 --- [Thread-40] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.350+0800 I NETWORK  [conn1] end connection 127.0.0.1:60169 (0 connections now open)
+2019-08-16 11:09:09.760  INFO 66893 --- [Thread-5] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.349+0800 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2019-08-16 11:09:09.762  INFO 66893 --- [Thread-67] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.348+0800 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2019-08-16 11:09:09.765  INFO 66893 --- [Thread-67] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.349+0800 I NETWORK  [conn1] end connection 127.0.0.1:60241 (0 connections now open)
+2019-08-16 11:09:09.762  INFO 66893 --- [Thread-52] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.351+0800 I NETWORK  [conn2] end connection 127.0.0.1:60216 (1 connection now open)
+2019-08-16 11:09:09.765  INFO 66893 --- [Thread-5] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.351+0800 I NETWORK  [conn1] end connection 127.0.0.1:60101 (0 connections now open)
+2019-08-16 11:09:09.766  INFO 66893 --- [Thread-5] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.742+0800 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2019-08-16 11:09:09.764  INFO 66893 --- [Thread-30] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.716+0800 I CONTROL  [signalProcessingThread] dbexit:  rc: 0
+2019-08-16 11:09:09.766  INFO 66893 --- [Thread-5] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.759+0800 I CONTROL  [signalProcessingThread] dbexit:  rc: 0
+2019-08-16 11:09:09.791  INFO 66893 --- [Thread-67] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.791+0800 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2019-08-16 11:09:09.792  INFO 66893 --- [Thread-40] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.777+0800 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2019-08-16 11:09:09.809  INFO 66893 --- [Thread-67] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.798+0800 I CONTROL  [signalProcessingThread] dbexit:  rc: 0
+2019-08-16 11:09:09.811  INFO 66893 --- [Thread-40] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.779+0800 I CONTROL  [signalProcessingThread] dbexit:  rc: 0
+2019-08-16 11:09:09.850  WARN 66893 --- [Thread-66] d.f.embed.mongo.AbstractMongoProcess     : could not stop mongod with db command, try next
+2019-08-16 11:09:09.850  WARN 66893 --- [Thread-51] d.f.embed.mongo.AbstractMongoProcess     : could not stop mongod with db command, try next
+2019-08-16 11:09:09.850  WARN 66893 --- [Thread-4] d.f.embed.mongo.AbstractMongoProcess     : could not stop mongod with db command, try next
+2019-08-16 11:09:09.851  WARN 66893 --- [Thread-29] d.f.embed.mongo.AbstractMongoProcess     : could not stop mongod with db command, try next
+2019-08-16 11:09:09.851  INFO 66893 --- [Thread-52] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.836+0800 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2019-08-16 11:09:09.853  INFO 66893 --- [Thread-52] o.s.b.a.mongo.embedded.EmbeddedMongo     : 2019-08-16T11:09:09.837+0800 I CONTROL  [signalProcessingThread] dbexit:  rc: 0
+2019-08-16 11:09:09.852  WARN 66893 --- [Thread-39] d.f.embed.mongo.AbstractMongoProcess     : could not stop mongod with db command, try next
+2019-08-16 11:09:09.938  INFO 66893 --- [Thread-58] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2019-08-16 11:09:09.938  INFO 66893 --- [Thread-8] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2019-08-16 11:09:09.938  INFO 66893 --- [Thread-43] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2019-08-16 11:09:09.940  INFO 66893 --- [Thread-51] d.f.e.process.runtime.ProcessControl     : execSuccess: false [kill, -2, 66903]
+2019-08-16 11:09:09.940  WARN 66893 --- [Thread-51] d.f.embed.mongo.AbstractMongoProcess     : could not stop mongod, try next
+2019-08-16 11:09:09.940  WARN 66893 --- [Thread-51] d.f.embed.mongo.AbstractMongoProcess     : could not stop mongod the second time, try one last thing
+2019-08-16 11:09:09.940  INFO 66893 --- [Thread-72] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2019-08-16 11:09:09.939  INFO 66893 --- [Thread-35] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2019-08-16 11:09:09.940  INFO 66893 --- [Thread-39] d.f.e.process.runtime.ProcessControl     : execSuccess: false [kill, -2, 66902]
+2019-08-16 11:09:09.941  WARN 66893 --- [Thread-39] d.f.embed.mongo.AbstractMongoProcess     : could not stop mongod, try next
+2019-08-16 11:09:09.941  WARN 66893 --- [Thread-39] d.f.embed.mongo.AbstractMongoProcess     : could not stop mongod the second time, try one last thing
+2019-08-16 11:09:09.940  INFO 66893 --- [Thread-4] d.f.e.process.runtime.ProcessControl     : execSuccess: false [kill, -2, 66896]
+2019-08-16 11:09:09.941  WARN 66893 --- [Thread-4] d.f.embed.mongo.AbstractMongoProcess     : could not stop mongod, try next
+2019-08-16 11:09:09.941  WARN 66893 --- [Thread-4] d.f.embed.mongo.AbstractMongoProcess     : could not stop mongod the second time, try one last thing
+2019-08-16 11:09:09.941  INFO 66893 --- [Thread-29] d.f.e.process.runtime.ProcessControl     : execSuccess: false [kill, -2, 66899]
+2019-08-16 11:09:09.942  INFO 66893 --- [Thread-66] d.f.e.process.runtime.ProcessControl     : execSuccess: false [kill, -2, 66916]
+2019-08-16 11:09:09.943  WARN 66893 --- [Thread-66] d.f.embed.mongo.AbstractMongoProcess     : could not stop mongod, try next
+2019-08-16 11:09:09.943  WARN 66893 --- [Thread-66] d.f.embed.mongo.AbstractMongoProcess     : could not stop mongod the second time, try one last thing
+2019-08-16 11:09:09.942  WARN 66893 --- [Thread-29] d.f.embed.mongo.AbstractMongoProcess     : could not stop mongod, try next
+2019-08-16 11:09:09.943  WARN 66893 --- [Thread-29] d.f.embed.mongo.AbstractMongoProcess     : could not stop mongod the second time, try one last thing
+2019-08-16 11:09:09.964  INFO 66893 --- [Thread-43] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:09.964  INFO 66893 --- [Thread-35] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:09.964  INFO 66893 --- [Thread-58] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:09.964  INFO 66893 --- [Thread-72] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:09.964  INFO 66893 --- [Thread-8] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:10.673  INFO 66893 --- [Thread-35] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:10.673  INFO 66893 --- [Thread-43] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:10.673  INFO 66893 --- [Thread-43] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:10.673  INFO 66893 --- [Thread-35] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:10.673  INFO 66893 --- [Thread-58] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:10.674  INFO 66893 --- [Thread-58] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:10.687  INFO 66893 --- [Thread-8] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:10.687  INFO 66893 --- [Thread-58] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:10.689  INFO 66893 --- [Thread-8] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:10.689  INFO 66893 --- [Thread-58] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:10.690  INFO 66893 --- [Thread-72] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:10.691  INFO 66893 --- [Thread-72] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:11.668  INFO 66893 --- [Thread-35] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:11.669  INFO 66893 --- [Thread-35] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:11.669  INFO 66893 --- [Thread-58] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:11.669  INFO 66893 --- [Thread-43] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:11.670  INFO 66893 --- [Thread-58] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:11.670  INFO 66893 --- [Thread-43] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:11.678  INFO 66893 --- [Thread-43] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:11.679  INFO 66893 --- [Thread-43] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:11.686  INFO 66893 --- [Thread-43] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:11.686  INFO 66893 --- [Thread-8] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:11.687  INFO 66893 --- [Thread-58] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:11.687  INFO 66893 --- [Thread-72] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:11.701  INFO 66893 --- [Thread-72] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:11.701  INFO 66893 --- [Thread-43] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:11.701  INFO 66893 --- [Thread-8] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:11.701  INFO 66893 --- [Thread-58] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:11.782  INFO 66893 --- [cluster-ClusterId{value='5d550ff49b9be4054d06d694', description='null'}-localhost:60232] org.mongodb.driver.cluster               : Exception in monitor thread while connecting to server localhost:60232
+
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:62) ~[mongodb-driver-core-3.6.4.jar:na]
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:126) ~[mongodb-driver-core-3.6.4.jar:na]
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:128) ~[mongodb-driver-core-3.6.4.jar:na]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_181]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:1.8.0_181]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[na:1.8.0_181]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[na:1.8.0_181]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[na:1.8.0_181]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:1.8.0_181]
+	at java.net.Socket.connect(Socket.java:589) ~[na:1.8.0_181]
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:59) ~[mongodb-driver-core-3.6.4.jar:na]
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:57) ~[mongodb-driver-core-3.6.4.jar:na]
+	... 3 common frames omitted
+
+2019-08-16 11:09:12.670  INFO 66893 --- [Thread-72] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:12.670  INFO 66893 --- [Thread-43] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:12.671  INFO 66893 --- [Thread-72] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:12.671  INFO 66893 --- [Thread-43] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:12.671  INFO 66893 --- [Thread-35] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:12.672  INFO 66893 --- [Thread-72] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:12.672  INFO 66893 --- [Thread-35] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:12.672  INFO 66893 --- [Thread-72] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:12.678  INFO 66893 --- [Thread-35] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:12.679  INFO 66893 --- [Thread-58] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:12.679  INFO 66893 --- [Thread-58] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:12.679  INFO 66893 --- [Thread-35] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:12.686  INFO 66893 --- [Thread-8] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:12.687  INFO 66893 --- [Thread-8] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:12.688  INFO 66893 --- [Thread-43] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:12.688  INFO 66893 --- [Thread-58] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:12.689  INFO 66893 --- [Thread-43] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2019-08-16 11:09:12.689  INFO 66893 --- [Thread-58] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2019-08-16 11:09:12.731  INFO 66893 --- [Thread-58] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:12.732  INFO 66893 --- [Thread-58] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:12.732  INFO 66893 --- [Thread-58] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:12.733  INFO 66893 --- [Thread-58] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:12.733  INFO 66893 --- [Thread-58] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:12.733  INFO 66893 --- [Thread-58] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:12.750  INFO 66893 --- [Thread-43] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:12.750  INFO 66893 --- [Thread-43] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:12.750  INFO 66893 --- [Thread-43] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:12.750  INFO 66893 --- [Thread-43] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:12.751  INFO 66893 --- [Thread-43] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:12.752  INFO 66893 --- [Thread-43] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:12.766  INFO 66893 --- [Thread-58] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:5, serverValue:2}] to localhost:60186 because the pool has been closed.
+2019-08-16 11:09:13.672  INFO 66893 --- [Thread-35] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:13.673  INFO 66893 --- [Thread-35] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:13.675  INFO 66893 --- [Thread-72] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:13.676  INFO 66893 --- [Thread-72] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:13.684  INFO 66893 --- [Thread-8] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:13.685  INFO 66893 --- [Thread-8] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:13.689  INFO 66893 --- [Thread-35] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:13.689  INFO 66893 --- [Thread-35] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2019-08-16 11:09:13.690  INFO 66893 --- [Thread-8] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:13.690  INFO 66893 --- [Thread-8] o.s.a.r.l.SimpleMessageListenerContainer : Waiting for workers to finish.
+2019-08-16 11:09:13.696  INFO 66893 --- [Thread-35] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:13.697  INFO 66893 --- [Thread-35] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:13.697  INFO 66893 --- [Thread-35] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:13.697  INFO 66893 --- [Thread-35] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:13.697  INFO 66893 --- [Thread-35] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:13.697  INFO 66893 --- [Thread-35] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:13.709  INFO 66893 --- [Thread-72] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:13.709  INFO 66893 --- [Thread-72] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2019-08-16 11:09:13.718  INFO 66893 --- [Thread-72] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:13.719  INFO 66893 --- [Thread-72] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:13.719  INFO 66893 --- [Thread-72] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:13.719  INFO 66893 --- [Thread-72] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:13.719  INFO 66893 --- [Thread-72] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:13.720  INFO 66893 --- [Thread-72] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:14.689  INFO 66893 --- [Thread-8] o.s.a.r.l.SimpleMessageListenerContainer : Successfully waited for workers to finish.
+2019-08-16 11:09:14.690  INFO 66893 --- [Thread-8] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2019-08-16 11:09:14.699  INFO 66893 --- [Thread-8] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:14.699  INFO 66893 --- [Thread-8] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:14.700  INFO 66893 --- [Thread-8] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:14.700  INFO 66893 --- [Thread-8] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:14.700  INFO 66893 --- [Thread-8] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
+2019-08-16 11:09:14.700  INFO 66893 --- [Thread-8] o.s.a.r.l.SimpleMessageListenerContainer : Shutdown ignored - container is not active already
