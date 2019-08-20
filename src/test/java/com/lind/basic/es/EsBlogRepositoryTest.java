@@ -23,24 +23,27 @@ public class EsBlogRepositoryTest {
     //清除所有的数据
     esBlogRepository.deleteAll();
     //初始化数据
-    esBlogRepository.save(new EsBlog("Had I not seen the Sun",
-        "I could have borne the shade",
-        "But Light a newer Wilderness. My Wilderness has made."));
-    esBlogRepository.save(new EsBlog("There is room in the halls of pleasure",
-        "For a long and lordly train",
-        "But one by one we must all file on, Through the narrow aisles of pain."));
-    esBlogRepository.save(new EsBlog("When you are old",
-        "When you are old and grey and full of sleep",
-        "And nodding by the fire，take down this book."));
+    esBlogRepository.save(new EsBlog(
+        "computer",
+        "it device",
+        "Most great product"));
+    esBlogRepository.save(new EsBlog(
+        "mobile",
+        "call device",
+        "Fastest development product"));
+    esBlogRepository.save(new EsBlog(
+        "note pc",
+        "it device",
+        "Most Popular product"));
   }
 
   @Test
   public void testFindDistinctEsBlogByTitleContainingOrSummaryContainingOrContentContaining() {
     Pageable pageable = PageRequest.of(0, 20);
 
-    String title = "Sun";
-    String summary = "is";
-    String content = "down";
+    String title = "computer";
+    String summary = "call";
+    String content = "发明";
 
     Page<EsBlog> page = esBlogRepository.findByTitleContainingOrSummaryContainingOrContentContaining(title, summary, content, pageable);
     System.out.println("------------start 1");
@@ -48,20 +51,6 @@ public class EsBlogRepositoryTest {
       System.out.println(blog.toString());
     }
     System.out.println("------------end 1");
-
-    title = "the";
-
-    summary = "the";
-
-    content = "the";
-
-    page = esBlogRepository.findByTitleContainingOrSummaryContainingOrContentContaining(title, summary, content, pageable);
-    System.out.println("------------start 2");
-    for(EsBlog blog : page) {
-      System.out.println(blog.toString());
-    }
-    System.out.println("------------end 2");
-
   }
 
 }
