@@ -19,13 +19,14 @@ public class HelloControler {
   @ApiOperation(value = "获取列表", notes = "获取用户欢迎列表")
   @GetMapping(value = "/hello")
   public ResponseEntity<Token> get() {
-    return null;
+    byte[] a1 = new byte[1024 * 1024];
+    return ResponseEntity.ok(Token.builder().build());
   }
 
   @ApiOperation(value = "获取欢迎词条", notes = "获取一个欢迎记录")
   @GetMapping(value = "/hello/{id}")
   public ResponseEntity<Token> get(@ApiParam("编号") @PathVariable int id) {
-    return null;
+    return ResponseEntity.ok(Token.builder().build());
   }
 
   @ApiOperation(value = "添加欢迎词条", notes = "添加一个欢迎记录")

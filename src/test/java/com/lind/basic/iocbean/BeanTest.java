@@ -3,6 +3,7 @@ package com.lind.basic.iocbean;
 import javax.annotation.Resource;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Profile;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -19,4 +20,9 @@ public class BeanTest {
     printLogService.printMessage("ok");
   }
 
+  @Test
+  public void init_destroy() {
+    InitDestroy initDestroy=new InitDestroy();
+    initDestroy.print();
+  }
 }

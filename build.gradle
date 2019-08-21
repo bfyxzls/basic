@@ -96,6 +96,8 @@ dependencies {
             'com.google.zxing:core:3.3.2',
             'com.google.zxing:javase:3.3.2',
             'com.alibaba:fastjson:1.2.35',
+            'org.springframework.boot:spring-boot-starter-aop'
+
     )
     compileOnly('org.projectlombok:lombok')
     testCompileOnly('org.projectlombok:lombok')
