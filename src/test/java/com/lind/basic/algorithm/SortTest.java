@@ -1,5 +1,10 @@
 package com.lind.basic.algorithm;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.PriorityQueue;
 import org.junit.Test;
 
 /**
@@ -141,5 +146,95 @@ public class SortTest {
       }
     }
     printArray(beforeData);
+  }
+
+  public int findKthLargest(Integer[] nums, int k) {
+    PriorityQueue<Integer> pq = new PriorityQueue<>(); // 小顶堆
+    for (int val : nums) {
+      pq.add(val);
+      if (pq.size() > k)  // 维护堆的大小为 K
+      {
+        pq.poll();//队列为空不会出现异常，和remove功能相同，remove在队列为空时会有异常
+      }
+    }
+    return pq.peek();//获取数据，与element方法相同，element在队列为空时会有异常
+  }
+
+  /**
+   * 第K个大的元素.
+   */
+  @Test
+  public void topK() {
+    Integer[] arr = new Integer[] {
+        3, 2, 1, 7, 75, 6, 4
+    };
+    PriorityQueue<Integer> pq = new PriorityQueue<Integer>(); // 小顶堆
+    for (int val : arr) {
+      pq.add(val);
+    }
+    for (int val : pq) {
+      System.out.println(val);
+    }
+/**
+ *      1
+ *    3    2
+ *  5  6  4
+ */
+    System.out.println("findKthLargest:" + findKthLargest(arr, 2));
+  }
+
+  /**
+   * 出现频率更多的元素.
+   *
+   * @param nums .
+   * @param k    .
+   * @return
+   */
+  public List<Integer> topKFrequent(int[] nums, int k) {
+    Map<Integer, Integer> frequencyForNum = new HashMap<>();
+    for (int num : nums) {
+      frequencyForNum.put(num, frequencyForNum.getOrDefault(num, 0) + 1);
+    }
+    List<Integer>[] buckets = new ArrayList[nums.length + 1];
+    for (int key : frequencyForNum.keySet()) {
+      int frequency = frequencyForNum.get(key);
+      if (buckets[frequency] == null) {
+        buckets[frequency] = new ArrayList<>();
+      }
+      buckets[frequency].add(key);
+    }
+    List<Integer> topK = new ArrayList<>();
+    for (int i = buckets.length - 1; i >= 0 && topK.size() < k; i--) {
+      if (buckets[i] == null) {
+        continue;
+      }
+      if (buckets[i].size() <= (k - topK.size())) {
+        topK.addAll(buckets[i]);
+      } else {
+        topK.addAll(buckets[i].subList(0, k - topK.size()));
+      }
+    }
+    return topK;
+  }
+
+  @Test
+  public void topKFrequent() {
+    int[] arr = new int[] {1, 1, 1, 2, 2, 3};
+    for (int val : topKFrequent(arr, 1)) {
+      System.out.println(val);
+    }
+  }
+
+  /**
+   * 某数字在数组中出现的次数.
+   */
+  @Test
+  public void frequency() {
+    Map<Integer, Integer> frequencyForNum = new HashMap<>();
+    int[] numbs = new int[] {1, 1, 1, 2, 2, 3};
+    for (int num : numbs) {
+      frequencyForNum.put(num, frequencyForNum.getOrDefault(num, 0) + 1);
+    }
+    System.out.println(frequencyForNum);
   }
 }
