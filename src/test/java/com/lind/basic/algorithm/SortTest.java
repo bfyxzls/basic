@@ -11,9 +11,10 @@ import org.junit.Test;
  * 排序算法.
  */
 public class SortTest {
-  int[] beforeData = {3, 2, 1, 5, 4};
+  int[] beforeData = {3, 8, 2, 1, 5, 4, 9};
 
   void printArray(int[] arr) {
+    System.out.println();
     int n = arr.length;
     for (int i = 0; i < n; ++i) {
       System.out.print(arr[i] + " ");
@@ -65,52 +66,80 @@ public class SortTest {
     }
   }
 
-  /* This function takes last element as pivot,
-       places the pivot element at its correct
-       position in sorted array, and places all
-       smaller (smaller than pivot) to left of
-       pivot and all greater elements to right
-       of pivot */
-  int quickPartition(int[] arr, int low, int high) {
-    int pivot = arr[high];
-    int i = (low - 1); // index of smaller element
-    for (int j = low; j < high; j++) {
-      // If current element is smaller than or
-      // equal to pivot
-      if (arr[j] <= pivot) {
-        i++;
+  void quickSort(int[] data, int start, int end) {
+    if (data == null || start < 0 || end > data.length - 1) {
+      throw new IllegalArgumentException("Invalid Parameters");
+    }
+    if (start == end) {
+      return;
+    }
+    int index = partition(data, start, end);
+    if (index > start) {
+      quickSort(data, start, index - 1);
+    }
+    if (index < end) {
+      quickSort(data, index + 1, end);
+    }
+  }
 
-        // swap arr[i] and arr[j]
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+  int partition(int[] data, int start, int end) {
+    int index = start + (int) (Math.random() * (end - start + 1));
+    swap(data, index, end);
+    int small = start - 1;
+    for (index = start; index < end; index++) {
+      if (data[index] < data[end]) {
+        small++;
+        if (small != index) {
+          swap(data, index, small);
+        }
       }
     }
+    swap(data, small + 1, end);
+    return small + 1;
+  }
 
-    // swap arr[i+1] and arr[high] (or pivot)
-    int temp = arr[i + 1];
-    arr[i + 1] = arr[high];
-    arr[high] = temp;
-
-    return i + 1;
+  private void swap(int[] data, int i, int j) {
+    int temp = data[i];
+    data[i] = data[j];
+    data[j] = temp;
   }
 
 
-  /* The main function that implements QuickSort().
-    arr[] --> Array to be sorted,
-    low  --> Starting index,
-    high  --> Ending index */
-  void quickSort(int[] arr, int low, int high) {
-    if (low < high) {
-      int pi = quickPartition(arr, low, high);
-
-      // Recursively sort elements before
-      // quickPartition and after quickPartition
-      quickSort(arr, low, pi - 1);
-      quickSort(arr, pi + 1, high);
+  void quickSort2(int[] arr, int low, int high) {
+    int i, j, temp, t;
+    if (low > high) {
+      return;
     }
-  }
+    i = low;
+    j = high;
+    //temp就是基准位
+    temp = arr[low];
 
+    while (i < j) {
+      //先看右边，依次往左递减
+      while (temp <= arr[j] && i < j) {
+        j--;
+      }
+      //再看左边，依次往右递增
+      while (temp >= arr[i] && i < j) {
+        i++;
+      }
+      //如果满足条件则交换
+      if (i < j) {
+        t = arr[j];
+        arr[j] = arr[i];
+        arr[i] = t;
+      }
+
+    }
+    //最后将基准为与i和j相等位置的数字交换
+    arr[low] = arr[i];
+    arr[i] = temp;
+    //递归调用左半数组
+    quickSort2(arr, low, j - 1);
+    //递归调用右半数组
+    quickSort2(arr, j + 1, high);
+  }
 
   /**
    * 冒泡排序总的平均时间复杂度为：O(n2).
@@ -127,6 +156,13 @@ public class SortTest {
   @Test
   public void quickSortTest() {
     quickSort(beforeData, 0, beforeData.length - 1);
+    printArray(beforeData);
+  }
+
+
+  @Test
+  public void quickSortTest2() {
+    quickSort2(beforeData, 0, beforeData.length - 1);
     printArray(beforeData);
   }
 
