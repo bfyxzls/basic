@@ -9,21 +9,6 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class Subscriber {
 
-  /**
-   * subscriber.
-   *
-   * @param data .
-   */
-  @RabbitListener(queues = MqConfig.LIND_DEAD_QUEUE)
-  public void customerSign(String data) {
-    try {
-
-      logger.info("从队列拿到数据 ：{}", data);
-
-    } catch (Exception ex) {
-      logger.error("签约同步异常", ex);
-    }
-  }
 
   /**
    * lindqueue.

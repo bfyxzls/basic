@@ -20,7 +20,17 @@ public class MqTest extends BaseTest {
   public void publisherTest() throws Exception {
     publisher.publish("hello lind");
     TimeUnit.MILLISECONDS.sleep(6000);//耗时3分钟
+  }
 
+  /**
+   * 测试消息超时由死信消费.
+   *
+   * @throws Exception .
+   */
+  @Test
+  public void publisherDealTest() throws Exception {
+    publisher.publishDealLetter("hello lind");
+    TimeUnit.MILLISECONDS.sleep(6000);//耗时3分钟
   }
 
   /**
