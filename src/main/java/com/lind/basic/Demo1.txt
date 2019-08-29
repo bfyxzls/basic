@@ -1,0 +1,28 @@
+Compiled from "Demo1.java"
+public class com.lind.basic.Demo1 {
+  public com.lind.basic.Demo1();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  static int hello();
+    Code:
+       0: iconst_1
+       1: istore_0
+       2: iconst_2
+       3: istore_1
+       4: iload_0
+       5: iload_1
+       6: iadd
+       7: istore_2
+       8: iload_2
+       9: ireturn
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: getstatic     #2                  // Field java/lang/System.out:Ljava/io/PrintStream;
+       3: invokestatic  #3                  // Method hello:()I
+       6: invokevirtual #4                  // Method java/io/PrintStream.println:(I)V
+       9: return
+}
