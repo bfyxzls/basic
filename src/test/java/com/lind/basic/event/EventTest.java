@@ -17,7 +17,7 @@ public class EventTest {
 
   @Test
   public void orderEvent() {
-    context.publishEvent(OrderEvent.builder().msg("ok").build());
+    context.publishEvent(new OrderEvent("ok"));
   }
 
 }
