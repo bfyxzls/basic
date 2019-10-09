@@ -16,6 +16,8 @@ spring:
 #    hibernate:
 #      ddl-auto: update
 
+logging.config: classpath:logback.xml
+
 mybatis-plus:
   # 如果是放在src/main/java目录下 classpath:com/yourpackage/*/mapper/*Mapper.xml
   # 如果是放在resource目录 classpath:mapper/*Mapper.xml
@@ -48,3 +50,30 @@ mybatis-plus:
     cache-enabled: false
 
 author: zzl
+
+passport:
+  type: md5
+  users:
+    admin
+    user
+  authrates: read,write #不能用双引号
+  default:
+     username: zzl
+     passworld: 123
+
+config-attributes:
+  value: 345                          #对应单个值
+  valueArray: 1,2,3,4,5,6,7,8,9      #对应数组
+  valueList:                         #对应list
+    -13579
+    -246810
+  valueMap:                          #对应map
+    name: lili
+    age: 20
+    sex: female
+  valueMapList:                      #对应list<map>
+    - name: bob
+      age: 21
+    - name: caven
+      age: 31
+

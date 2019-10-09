@@ -1,9 +1,9 @@
 package com.lind.basic.util;
 
-import com.google.common.base.Predicate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import org.junit.Assert;
 import org.junit.Test;
@@ -84,7 +84,7 @@ public class BasicGrammarTest {
 
   @FunctionalInterface
   public interface Do {
-    abstract void print();
+    void print();
 
     default void description() {
       System.out.println("FunctionalInterface");

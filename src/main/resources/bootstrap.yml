@@ -12,3 +12,5 @@ management:
 spring:
   application:
     name: com.lind.basic
+
+author: zhangzhanling

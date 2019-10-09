@@ -99,7 +99,8 @@ dependencies {
     )
     compileOnly('org.projectlombok:lombok')
     testCompileOnly('org.projectlombok:lombok')
-
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+    compile group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
     testCompile(
             'org.springframework.boot:spring-boot-starter-test',
             'com.github.kstyrc:embedded-redis:0.6',
@@ -109,6 +110,7 @@ dependencies {
             'org.springframework.boot:spring-boot-starter-data-mongodb',
             'org.springframework.boot:spring-boot-starter-amqp',
             'org.springframework.boot:spring-boot-starter-cache',
+           
     )
 }
 

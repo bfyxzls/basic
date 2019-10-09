@@ -2,10 +2,8 @@ package com.lind.basic.util;
 
 import java.util.function.Consumer;
 import java.util.function.Predicate;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
-@Slf4j
 public class FunctionInterfaceTest {
   private int testValue = 0;
 
@@ -43,11 +41,6 @@ public class FunctionInterfaceTest {
   @Test
   public void lambda() {
     logger(i -> System.out.println(i), "hello");
-  }
-
-  @Test
-  public void lambdaLog() {
-    logger(i -> logger.info(i), "hello");
   }
 
   @Test

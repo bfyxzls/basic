@@ -61,7 +61,7 @@ public class TotpTest {
      *    * HOTP = DBC2 modulo 10^6 = 872921.
      *    We treat the dynamic binary code as a 31-bit, unsigned, big-endian
      *    integer; the first byte is masked with a 0x7f.
-     *    We then take this number modulo 1,000,000 (10^6) to generate the 6-
+     *    We then pop this number modulo 1,000,000 (10^6) to generate the 6-
      *    digit HOTP value 872921 decimal.
      */
     String input = "hello";
