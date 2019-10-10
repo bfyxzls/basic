@@ -5,6 +5,15 @@ import org.apache.commons.codec.binary.Base32;
 import org.apache.commons.codec.binary.Hex;
 
 public class GoogleAuthUtils {
+
+  /**
+   * Suppress default constructor for noninstantiability.
+   */
+  private GoogleAuthUtils() {
+    throw new AssertionError();
+  }
+
+
   /**
    * 随机生成一个密钥.
    * https://www.jianshu.com/p/de903c074d77

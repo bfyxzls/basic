@@ -15,6 +15,13 @@ import org.apache.commons.lang3.StringUtils;
 public class DateUtils {
 
   /**
+   * Suppress default constructor for noninstantiability.
+   */
+  private DateUtils() {
+    throw new AssertionError();
+  }
+
+  /**
    * 默认日期格式化方式.
    */
   public static final String DEFAULT_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";

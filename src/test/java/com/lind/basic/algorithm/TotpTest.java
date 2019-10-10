@@ -34,13 +34,13 @@ public class TotpTest {
      * 5.4.  Example of HOTP Computation for Digit = 6.
      *    The following code example describes the extraction of a dynamic
      *    binary code given that hmac_result is a byte array with the HMAC-
-     *    SHA-1 result:
+     *    sha-1 result:
      *         int offset   =  hmac_result[19] & 0xf ;
      *         int bin_code = (hmac_result[offset]  & 0x7f) << 24
      *            | (hmac_result[offset+1] & 0xff) << 16
      *            | (hmac_result[offset+2] & 0xff) <<  8
      *            | (hmac_result[offset+3] & 0xff) ;
-     *    SHA-1 HMAC Bytes (Example)
+     *    sha-1 HMAC Bytes (Example)
      *    -------------------------------------------------------------
      *    | Byte Number                                               |
      *    -------------------------------------------------------------

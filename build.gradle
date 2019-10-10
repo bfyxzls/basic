@@ -32,7 +32,7 @@ buildscript {
     }
 }
 group 'com.lind'
-version '1.2.2'
+version '1.2.3'
 
 apply plugin: 'java'
 apply plugin: 'idea'
@@ -96,11 +96,15 @@ dependencies {
             'com.google.zxing:core:3.3.2',
             'com.google.zxing:javase:3.3.2',
             'com.alibaba:fastjson:1.2.35',
+            'org.springframework.boot:spring-boot-starter-aop'
+
     )
     compileOnly('org.projectlombok:lombok')
     testCompileOnly('org.projectlombok:lombok')
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
     compile group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
+    compile('io.springfox:springfox-swagger2:2.6.1')
+    compile('io.springfox:springfox-swagger-ui:2.6.1')
     testCompile(
             'org.springframework.boot:spring-boot-starter-test',
             'com.github.kstyrc:embedded-redis:0.6',
@@ -110,7 +114,7 @@ dependencies {
             'org.springframework.boot:spring-boot-starter-data-mongodb',
             'org.springframework.boot:spring-boot-starter-amqp',
             'org.springframework.boot:spring-boot-starter-cache',
-           
+            'org.springframework.boot:spring-boot-starter-data-elasticsearch'
     )
 }
 

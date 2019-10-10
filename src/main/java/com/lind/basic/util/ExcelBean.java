@@ -1,5 +1,6 @@
 package com.lind.basic.util;
 
+import java.awt.Color;
 import java.io.Serializable;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 
@@ -7,28 +8,12 @@ import org.apache.poi.xssf.usermodel.XSSFCellStyle;
  * 导入导出excel.
  */
 public class ExcelBean implements Serializable {
-
   private static final long serialVersionUID = 1L;
-
-  /**
-   * 列头（标题）名.
-   */
   private String headTextName;
-
-  /**
-   * 对应字段名.
-   */
   private String propertyName;
-
-  /**
-   * 合并单元格数.
-   */
   private Integer cols = 0;
-
-  /**
-   * 样式不被序列化.
-   */
   private transient XSSFCellStyle cellStyle;
+  private Color bgColor;
 
   /**
    * init.
@@ -53,6 +38,28 @@ public class ExcelBean implements Serializable {
     this.headTextName = headTextName;
     this.propertyName = propertyName;
     this.cols = cols;
+  }
+
+  /**
+   * init.
+   *
+   * @param headTextName .
+   * @param propertyName .
+   * @param bgColor      .
+   */
+  public ExcelBean(String headTextName, String propertyName, Color bgColor) {
+    super();
+    this.headTextName = headTextName;
+    this.propertyName = propertyName;
+    this.bgColor = bgColor;
+  }
+
+  public Color getBgColor() {
+    return bgColor;
+  }
+
+  public void setBgColor(Color bgColor) {
+    this.bgColor = bgColor;
   }
 
   public String getHeadTextName() {

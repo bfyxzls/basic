@@ -8,7 +8,15 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @EnableAsync
 public class BasicApplication {
 
-  public static void main(String[] args) {
+  static int hello() {
+    int a = 1;
+    int b = 2;
+    int c = a + b;
+    return c;
+  }
+
+  public static void main(String[] args) throws Exception {
+    System.out.println(hello());
     SpringApplication.run(BasicApplication.class, args);
   }
 }

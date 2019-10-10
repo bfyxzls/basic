@@ -10,12 +10,27 @@ public class Publisher {
   private RabbitTemplate rabbitTemplate;
 
   /**
-   * 发送拨打电话消息.
+   * 消息异常消息，它会反复重试消费，直到成功.
    */
   public void publish(String message) {
     try {
       rabbitTemplate
           .convertAndSend(MqConfig.LIND_EXCHANGE, MqConfig.LIND_QUEUE_ROUTEKEY,
+              message);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  /**
+   * 测试死信消息.
+   *
+   * @param message .
+   */
+  public void publishDealLetter(String message) {
+    try {
+      rabbitTemplate
+          .convertAndSend(MqConfig.LIND_EXCHANGE, MqConfig.LIND_TEST_DEAL_QUEUE,
               message);
     } catch (Exception e) {
       e.printStackTrace();
@@ -33,6 +48,12 @@ public class Publisher {
     } catch (Exception e) {
       e.printStackTrace();
     }
+  }
+
+  public void longJobPublish(String message) {
+    rabbitTemplate
+        .convertAndSend(MqConfig.LIND_EXCHANGE, MqConfig.LIND_QUEUE_Long,
+            message);
   }
 }
 

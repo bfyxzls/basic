@@ -6,6 +6,14 @@ import org.apache.commons.lang3.StringUtils;
  * 星号类.
  */
 public class ReplaceStarUtils {
+
+  /**
+   * Suppress default constructor for noninstantiability.
+   */
+  private ReplaceStarUtils() {
+    throw new AssertionError();
+  }
+
   /**
    * 实际替换动作.
    *

@@ -1,5 +1,6 @@
 package com.lind.basic.util;
 
+import java.awt.Color;
 import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
 import java.io.BufferedOutputStream;
@@ -10,10 +11,8 @@ import java.lang.reflect.Method;
 import java.math.BigDecimal;
 import java.nio.charset.Charset;
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -23,6 +22,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.BorderStyle;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -30,6 +31,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFColor;
 import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -157,7 +159,7 @@ public class ExcelUtils {
     XSSFSheet sheet = workbook.createSheet(sheetName);
     // 以下为excel的字体样式以及excel的标题与内容的创建，下面会具体分析;
     createFont(workbook);//字体样式
-    createTableHeader(sheet, map);//创建标题（头）
+    createTableHeader(sheet, map, workbook);//创建标题（头）
     createTableRows(sheet, map, objs, clazz);//创建内容
     return workbook;
   }
@@ -200,7 +202,9 @@ public class ExcelUtils {
    * @param sheet 工作簿
    * @param map   每行每个单元格对应的列头信息
    */
-  public static final void createTableHeader(XSSFSheet sheet, Map<Integer, List<ExcelBean>> map) {
+  public static final void createTableHeader(XSSFSheet sheet,
+                                             Map<Integer, List<ExcelBean>> map,
+                                             XSSFWorkbook workbook) {
     int startIndex = 0;//cell起始位置
     int endIndex = 0;//cell终止位置
 
@@ -208,6 +212,12 @@ public class ExcelUtils {
       XSSFRow row = sheet.createRow(entry.getKey());
       List<ExcelBean> excels = entry.getValue();
       for (int x = 0; x < excels.size(); x++) {
+        if (excels.get(x).getBgColor() != null) {
+          createFont(workbook);
+          fontStyle.setFillPattern(FillPatternType.FINE_DOTS);
+          fontStyle.setFillBackgroundColor(new XSSFColor(excels.get(x).getBgColor()));
+          fontStyle.setFillForegroundColor(new XSSFColor(Color.WHITE));
+        }
         //合并单元格
         if (excels.get(x).getCols() > 1) {
           if (x == 0) {
@@ -302,24 +312,25 @@ public class ExcelUtils {
         PropertyDescriptor pd = new PropertyDescriptor(em.getPropertyName(), clazz);
         Method getMethod = pd.getReadMethod();
         Object rtn = getMethod.invoke(obj);
+        XSSFCell cell = row.createCell(i);
+        cell.setCellType(CellType.STRING);
+        // 如果是日期类型 进行 转换
         String value = "";
         // 如果是日期类型 进行 转换
         if (rtn != null) {
-          if (rtn instanceof LocalDateTime) {
-            value = DateUtils.getDateFormat((LocalDateTime) rtn);
-          } else if (rtn instanceof BigDecimal) {
-            NumberFormat nf = new DecimalFormat("#,##0.00");
-            value = nf.format((BigDecimal) rtn).toString();
-          } else if ((rtn instanceof Integer)
-              && (Integer.parseInt(rtn.toString()) < 0)) {
-            value = "--";
+          value = rtn.toString();
+          if (rtn instanceof Integer) {
+            cell.setCellValue((Integer) rtn);
+            cell.setCellType(CellType.NUMERIC);
+          } else if (rtn instanceof Double || rtn instanceof BigDecimal) {
+            cell.setCellValue((Double) rtn);
+            cell.setCellType(CellType.NUMERIC);
           } else {
-            value = rtn.toString();
+            cell.setCellValue(value);
           }
+        } else {
+          cell.setCellValue(value);
         }
-        XSSFCell cell = row.createCell(i);
-        cell.setCellValue(value);
-        cell.setCellType(XSSFCell.CELL_TYPE_STRING);
         cell.setCellStyle(fontStyle2);
         // 获得最大列宽
         int width = value.getBytes(Charset.defaultCharset()).length * 300;
@@ -367,26 +378,22 @@ public class ExcelUtils {
                             String fileName,
                             List<ExcelBean> ems,
                             Class clazz,
-                            List objs) {
+                            List objs) throws Exception {
     fileName = getUtf8FileName(fileName);
     response.setHeader("Content-Disposition", "attachment;filename=" + fileName);
     response.setContentType("application/vnd.ms-excel;charset=UTF-8");
     response.setHeader("Pragma", "no-cache");
     response.setHeader("Cache-Control", "no-cache");
     response.setDateHeader("Expires", 0);
-    try {
-      //导出Excel对象
-      Map<Integer, List<ExcelBean>> map = new LinkedHashMap<>();
-      map.put(0, ems);
-      XSSFWorkbook workbook = ExcelUtils.createExcelFile(clazz, objs, map, "sheet1");
-      OutputStream output = response.getOutputStream();
-      BufferedOutputStream bufferedOutPut = new BufferedOutputStream(output);
-      bufferedOutPut.flush();
-      workbook.write(bufferedOutPut);
-      bufferedOutPut.close();
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
+    //导出Excel对象
+    Map<Integer, List<ExcelBean>> map = new LinkedHashMap<>();
+    map.put(0, ems);
+    XSSFWorkbook workbook = ExcelUtils.createExcelFile(clazz, objs, map, "sheet1");
+    OutputStream output = response.getOutputStream();
+    BufferedOutputStream bufferedOutPut = new BufferedOutputStream(output);
+    bufferedOutPut.flush();
+    workbook.write(bufferedOutPut);
+    bufferedOutPut.close();
 
   }
 }

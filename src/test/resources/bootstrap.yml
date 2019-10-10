@@ -2,9 +2,17 @@ spring:
   application:
     name: com.lind.basic
   datasource:
-        platform: h2
-        driverClassName: org.h2.Driver
-        url: jdbc:h2:mem:testdb
+    platform: h2
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+  sleuth:
+    sampler:
+      probability: 1.0 #抽样
+  data:
+    elasticsearch:
+      cluster-name: docker-cluster
+      cluster-nodes: 127.0.0.1:9300
+
 #  datasource:
 #        driver-class-name: com.mysql.jdbc.Driver
 #        url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&serverTimezone=Hongkong
@@ -51,6 +59,7 @@ mybatis-plus:
 
 author: zzl
 
+<<<<<<< HEAD
 passport:
   type: md5
   users:
@@ -77,3 +86,13 @@ config-attributes:
     - name: caven
       age: 31
 
+=======
+logging:
+  level:
+    #org.springframework.web: debug #对这些包进行日志
+    #org.springframework.security: DEBUG
+    com.lind.basic: INFO
+  path: logs/ #日志持久化的文件位置
+  file:
+    max-size: 1GB
+>>>>>>> e524ab568722ffbe1d9dbabf92444987f635d79e

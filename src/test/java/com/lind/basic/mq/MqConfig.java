@@ -15,17 +15,17 @@ import org.springframework.test.context.ActiveProfiles;
 @ActiveProfiles("test")
 public class MqConfig {
   public static final String LIND_EXCHANGE = "test.basic.exchange";
-  public static final String LIND_DL_EXCHANGE = "test.basic.dl.exchange";
-  public static final String LIND_QUEUE = "test.basic.cold.queue";
-  public static final String LIND_DEAD_QUEUE = "test.basic.queue.dead";
+  public static final String LIND_TEST_DEAL_QUEUE = "test.basic.cold.queue";
   public static final String LIND_FANOUT_EXCHANGE = "test.basic.fanoutExchange";
   public static final String LIND_QUEUE_ROUTEKEY = "test.basic.*";
   public static final String LIND_QUEUE_ROUTEKEY1 = "test.basic.a1";
   public static final String LIND_QUEUE_ROUTEKEY2 = "test.basic.a2";
+  public static final String LIND_QUEUE_Long = "test.dudu.long";
+
   /**
-   * 单位为微秒.
+   * 单位为毫秒.
    */
-  private static final long makeCallExpire = 60000;
+  private static final long makeCallExpire = 1000;
 
   /**
    * 创建普通交换机.
@@ -36,44 +36,19 @@ public class MqConfig {
         .build();
   }
 
-  /**
-   * 创建死信交换机.
-   */
-  @Bean
-  public TopicExchange lindExchangeDl() {
-    return (TopicExchange) ExchangeBuilder.topicExchange(LIND_DL_EXCHANGE).durable(true)
-        .build();
-  }
 
   /**
    * 创建普通队列.
    */
   @Bean
-  public Queue lindQueue() {
-    return QueueBuilder.durable(LIND_QUEUE)
-        .withArgument("x-dead-letter-exchange", LIND_DL_EXCHANGE)//设置死信交换机
+  public Queue lindNeedDealLetterQueue() {
+    return QueueBuilder.durable(LIND_TEST_DEAL_QUEUE)
+        .withArgument("x-dead-letter-exchange", DealLetterSubscriber.LIND_DL_EXCHANGE)//设置死信交换机
         .withArgument("x-message-ttl", makeCallExpire)
-        .withArgument("x-dead-letter-routing-key", LIND_DEAD_QUEUE)//设置死信routingKey
+        .withArgument("x-dead-letter-routing-key", DealLetterSubscriber.LIND_DEAD_QUEUE)//设置死信routingKey
         .build();
   }
 
-  /**
-   * 创建死信队列.
-   */
-  @Bean
-  public Queue lindDelayQueue() {
-    return QueueBuilder.durable(LIND_DEAD_QUEUE).build();
-  }
-
-  /**
-   * 绑定死信队列.
-   */
-  @Bean
-  public Binding bindDeadBuilders() {
-    return BindingBuilder.bind(lindDelayQueue())
-        .to(lindExchangeDl())
-        .with(LIND_DEAD_QUEUE);
-  }
 
   /**
    * 绑定普通队列.
@@ -82,9 +57,9 @@ public class MqConfig {
    */
   @Bean
   public Binding bindBuilders() {
-    return BindingBuilder.bind(lindQueue())
+    return BindingBuilder.bind(lindNeedDealLetterQueue())
         .to(lindExchange())
-        .with(LIND_QUEUE);
+        .with(LIND_TEST_DEAL_QUEUE);
   }
 
 
@@ -150,5 +125,17 @@ public class MqConfig {
   @Bean
   public Binding product2QueueBinding() {
     return BindingBuilder.bind(product2Queue()).to(fanoutExchange());
+  }
+
+  @Bean
+  public Queue longQueue() {
+    return new Queue(LIND_QUEUE_Long);
+  }
+
+  @Bean
+  public Binding bindLongQueue() {
+    return BindingBuilder.bind(longQueue())
+        .to(lindExchange())
+        .with(LIND_QUEUE_Long);
   }
 }

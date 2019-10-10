@@ -8,6 +8,14 @@ import java.util.stream.Stream;
  * 枚举辅助类.
  */
 public class EnumUtils {
+
+  /**
+   * Suppress default constructor for noninstantiability.
+   */
+  private EnumUtils() {
+    throw new AssertionError();
+  }
+
   /**
    * 通过枚举code返回枚举对象.
    */

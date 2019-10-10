@@ -5,6 +5,14 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
 public class HmacUtils {
+
+  /**
+   * Suppress default constructor for noninstantiability.
+   */
+  private HmacUtils() {
+    throw new AssertionError();
+  }
+
   private static final String MAC_NAME = "HmacSHA1";
   private static final String ENCODING = "UTF-8";
 

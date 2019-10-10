@@ -18,10 +18,32 @@ public class MqTest extends BaseTest {
    */
   @Test
   public void publisherTest() throws Exception {
-    for (int i = 0; i < 5; i++) {
-      publisher.publish("hello lind");
+    publisher.publish("hello lind");
+    TimeUnit.MILLISECONDS.sleep(6000);//耗时3分钟
+  }
+
+  /**
+   * 测试消息超时由死信消费.
+   *
+   * @throws Exception .
+   */
+  @Test
+  public void publisherDealTest() throws Exception {
+    publisher.publishDealLetter("hello lind");
+    TimeUnit.MILLISECONDS.sleep(6000);//耗时3分钟
+  }
+
+  /**
+   * 连续发布消息.
+   *
+   * @throws Exception .
+   */
+  @Test
+  public void publisherLoopTest() throws Exception {
+    for (int i = 0; i < 100; i++) {
+      publisher.longJobPublish("long lind " + i);
     }
-    TimeUnit.MILLISECONDS.sleep(5000);
+    TimeUnit.MILLISECONDS.sleep(6 * 1000);
 
   }
 }
