@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+management:
+  server:
+    port: 18080
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        #exclude: info,env,beans
+spring:
+  application:
+    name: com.lind.basic
+
+author: zhangzhanling
