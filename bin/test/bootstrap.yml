@@ -59,7 +59,6 @@ mybatis-plus:
 
 author: zzl
 
-<<<<<<< HEAD
 passport:
   type: md5
   users:
@@ -86,7 +85,6 @@ config-attributes:
     - name: caven
       age: 31
 
-=======
 logging:
   level:
     #org.springframework.web: debug #对这些包进行日志
@@ -95,4 +93,4 @@ logging:
   path: logs/ #日志持久化的文件位置
   file:
     max-size: 1GB
->>>>>>> e524ab568722ffbe1d9dbabf92444987f635d79e
+
