@@ -1,13 +1,34 @@
 package com.lind.basic.mq;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.Date;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Publisher {
+  Logger logger = LoggerFactory.getLogger(Publisher.class);
   @Autowired
   private RabbitTemplate rabbitTemplate;
+  @Autowired
+  private ObjectMapper objectMapper;
+
+  public void publishZzl(String message) {
+    try {
+      MessageObj messageObj = new MessageObj(message, new Date());
+      rabbitTemplate.convertAndSend(
+          MqBase.EXCHANGE,
+          "zzl.hello2",
+          objectMapper.writeValueAsString(messageObj)
+      );
+      logger.info("Publisher:{}", messageObj);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
 
   /**
    * 消息异常消息，它会反复重试消费，直到成功.

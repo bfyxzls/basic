@@ -1,14 +1,45 @@
 package com.lind.basic.mq;
 
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.rabbitmq.client.Channel;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.time.LocalDateTime;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 @Slf4j
-public class Subscriber {
+public class Subscriber extends MqBase {
+  public static final String QUEUE_NAME = "zzl.hello2";
+  @Autowired
+  ObjectMapper objectMapper;
 
+  @RabbitListener(queues = QUEUE_NAME)
+  public void zzlHello(Message message, Channel channel) throws IOException, InterruptedException {
+
+    runRepeatMq(message, channel, o -> {
+      try {
+        MessageObj messageObj = objectMapper.readValue(message.getBody(), MessageObj.class);
+        logger.info("{}:Subscriber:{}", LocalDateTime.now(), messageObj.getBody());
+      } catch (UnsupportedEncodingException e) {
+        e.printStackTrace();
+      } catch (JsonParseException e) {
+        e.printStackTrace();
+      } catch (JsonMappingException e) {
+        e.printStackTrace();
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+      int a = 0;
+      int b = 1 / a;
+    });
+  }
 
   /**
    * lindqueue.
