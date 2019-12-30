@@ -90,14 +90,22 @@ dependencies {
             'org.springframework.cloud:spring-cloud-starter-openfeign',
             'org.apache.commons:commons-lang3:3.5',
             'commons-collections:commons-collections:3.2.2',
-            'org.apache.poi:poi-ooxml:3.17',
+            'org.apache.poi:poi-ooxml:4.1.1',
             'redis.clients:jedis',
             'com.google.guava:guava:24.1-jre',
             'com.google.zxing:core:3.3.2',
             'com.google.zxing:javase:3.3.2',
             'com.alibaba:fastjson:1.2.35',
-            'org.springframework.boot:spring-boot-starter-aop'
+            'org.springframework.boot:spring-boot-starter-aop',
+            'org.apache.poi:poi:3.14',
 
+            'org.apache.poi:poi-scratchpad:3.14',
+            'org.apache.poi:poi-ooxml:3.14',
+
+            'fr.opensagres.xdocreport:xdocreport:1.0.6',
+            'org.apache.poi:poi-ooxml-schemas:3.14',
+            'org.apache.poi:ooxml-schemas:1.3',
+            'org.jsoup:jsoup:1.11.3'
     )
     compileOnly('org.projectlombok:lombok')
     testCompileOnly('org.projectlombok:lombok')
@@ -108,7 +116,7 @@ dependencies {
     testCompile(
             'org.springframework.boot:spring-boot-starter-test',
             'com.github.kstyrc:embedded-redis:0.6',
-            'de.flapdoodle.embed:de.flapdoodle.embed.mongo',
+//            'de.flapdoodle.embed:de.flapdoodle.embed.mongo',
             'com.github.fridujo:rabbitmq-mock:1.0.10',
             'commons-io:commons-io:2.5',
             'org.springframework.boot:spring-boot-starter-data-mongodb',

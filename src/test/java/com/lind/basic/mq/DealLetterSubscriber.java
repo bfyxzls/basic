@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.springframework.test.context.ActiveProfiles;
 
-@Component
+//@Component
 @ActiveProfiles("test")
 @Slf4j
 public class DealLetterSubscriber {
