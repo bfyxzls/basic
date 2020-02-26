@@ -114,10 +114,12 @@ dependencies {
             'org.springframework.boot:spring-boot-starter-data-mongodb',
             'org.springframework.boot:spring-boot-starter-amqp',
             'org.springframework.boot:spring-boot-starter-cache',
-            'org.springframework.boot:spring-boot-starter-data-elasticsearch'
+            'org.springframework.boot:spring-boot-starter-data-elasticsearch',
+            'org.elasticsearch:elasticsearch:1.7.3',
+            'commons-io:commons-io:2.4',
+            'com.fasterxml.jackson.core:jackson-databind:2.6.2'
     )
 }
-
 // 类型项目需要是非启动项目，所以有以下设置
 bootJar.enabled = false // 不要求启动项目，不需要main方法
 jar.enabled = true // 需要在build/libs下生成jar文件

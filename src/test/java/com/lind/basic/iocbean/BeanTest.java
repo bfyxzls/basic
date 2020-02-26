@@ -14,6 +14,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class BeanTest {
   @Resource(name = "printLogService")
   PrintLogService printLogService;
+  @Autowired
+  InitDestroy initDestroy;
 
   @Test
   public void testIoc2() {
@@ -22,7 +24,6 @@ public class BeanTest {
 
   @Test
   public void init_destroy() {
-    InitDestroy initDestroy=new InitDestroy();
     initDestroy.print();
   }
 }
