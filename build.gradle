@@ -105,6 +105,9 @@ dependencies {
     compile group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
     compile('io.springfox:springfox-swagger2:2.6.1')
     compile('io.springfox:springfox-swagger-ui:2.6.1')
+
+
+    testCompile 'pl.allegro.tech:embedded-elasticsearch:2.5.0'
     testCompile(
             'org.springframework.boot:spring-boot-starter-test',
             'com.github.kstyrc:embedded-redis:0.6',
@@ -115,9 +118,7 @@ dependencies {
             'org.springframework.boot:spring-boot-starter-amqp',
             'org.springframework.boot:spring-boot-starter-cache',
             'org.springframework.boot:spring-boot-starter-data-elasticsearch',
-            'org.elasticsearch:elasticsearch:1.7.3',
-            'commons-io:commons-io:2.4',
-            'com.fasterxml.jackson.core:jackson-databind:2.6.2'
+
     )
 }
 // 类型项目需要是非启动项目，所以有以下设置
