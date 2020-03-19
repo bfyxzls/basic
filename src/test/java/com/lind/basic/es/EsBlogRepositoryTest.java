@@ -47,7 +47,7 @@ public class EsBlogRepositoryTest {
 
     Page<EsBlog> page = esBlogRepository.findByTitleContainingOrSummaryContainingOrContentContaining(title, summary, content, pageable);
     System.out.println("------------start 1");
-    for(EsBlog blog : page) {
+    for (EsBlog blog : page) {
       System.out.println(blog.toString());
     }
     System.out.println("------------end 1");

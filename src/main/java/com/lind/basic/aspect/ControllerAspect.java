@@ -1,4 +1,4 @@
-package com.lind.basic;
+package com.lind.basic.aspect;
 
 import javax.servlet.http.HttpServletRequest;
 import org.aspectj.lang.JoinPoint;
@@ -17,8 +17,8 @@ import org.springframework.web.context.request.ServletRequestAttributes;
  */
 @Aspect
 @Component
-public class AopPrintConstController {
-  private static final Logger logger = LoggerFactory.getLogger(AopPrintConstController.class);
+public class ControllerAspect {
+  private static final Logger logger = LoggerFactory.getLogger(ControllerAspect.class);
 
   /**
    * 横切点，哪些方法需要被横切.
