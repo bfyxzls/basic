@@ -3,7 +3,7 @@
 !gradle/wrapper/gradle-wrapper.jar
 .log
 .DS_Store
-
+/target/
 ### STS ###
 .apt_generated
 .classpath
