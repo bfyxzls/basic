@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 spring:
   application:
     name: com.lind.basic
-  datasource:
-    platform: h2
-    driverClassName: org.h2.Driver
-    url: jdbc:h2:mem:testdb
   sleuth:
     sampler:
       probability: 1.0 #抽样
@@ -14,123 +9,20 @@ spring:
       cluster-name: docker-cluster
       cluster-nodes: 127.0.0.1:9300
 
-#  datasource:
-#        driver-class-name: com.mysql.jdbc.Driver
-#        url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&serverTimezone=Hongkong
-#        username: root
-#        password: root
-#  jpa:
-#    database-platform: org.hibernate.dialect.H2Dialect
-#    show-sql: true
-#    hibernate:
-#      ddl-auto: update
-
-logging.config: classpath:logback.xml
-
-mybatis-plus:
-  # 如果是放在src/main/java目录下 classpath:com/yourpackage/*/mapper/*Mapper.xml
-  # 如果是放在resource目录 classpath:mapper/*Mapper.xml
-  mapper-locations: classpath:mapper/*.xml
-  #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.lind.basic.entity.mybatis
-  global-config:
-    #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局 唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
-    id-type: 0
-    #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
-    field-strategy: 2
-    #驼峰下划线转换
-    db-column-underline: true
-    #mp2.3+ 全局表前缀 mp_
-    #table-prefix: user_
-    #刷新mapper 调试神器
-    refresh-mapper: true
-    #数据库大写下划线转换
-    #capital-mode: true
-    # Sequence序列接口实现类配置
-    #key-generator: com.baomidou.mybatisplus.incrementer.OracleKeyGenerator
-    #逻辑删除配置（下面3个配置）
-    logic-delete-value: 1
-    logic-not-delete-value: 0
-    #自定义填充策略接口实现
-    #meta-object-handler: com.baomidou.springboot.MyMetaObjectHandler
-  configuration:
-    #配置返回数据库(column下划线命名&&返回java实体是驼峰命名)，自动匹配无需as（没开启这个，SQL需要写as： select user_id as userId）
-    map-underscore-to-camel-case: true
-    cache-enabled: false
-
-author: zzl
-
-passport:
-  type: md5
-  users:
-    admin
-    user
-  authrates: read,write #不能用双引号
-  default:
-     username: zzl
-     passworld: 123
-
-config-attributes:
-  value: 345                          #对应单个值
-  valueArray: 1,2,3,4,5,6,7,8,9      #对应数组
-  valueList:                         #对应list
-    -13579
-    -246810
-  valueMap:                          #对应map
-    name: lili
-    age: 20
-    sex: female
-  valueMapList:                      #对应list<map>
-    - name: bob
-      age: 21
-    - name: caven
-      age: 31
-
-logging:
-  level:
-    #org.springframework.web: debug #对这些包进行日志
-    #org.springframework.security: DEBUG
-    com.lind.basic: INFO
-  path: logs/ #日志持久化的文件位置
-  file:
-    max-size: 1GB
-spring:
-  application:
-    name: com.lind.basic
   datasource:
-    platform: h2
-    driverClassName: org.h2.Driver
-    url: jdbc:h2:mem:testdb
-  sleuth:
-    sampler:
-      probability: 1.0 #抽样
-#  data:
-#    elasticsearch:
-#      cluster-name: docker-cluster
-#      cluster-nodes: 127.0.0.1:9300
-
-#  datasource:
-#        driver-class-name: com.mysql.jdbc.Driver
-#        url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&serverTimezone=Hongkong
-#        username: root
-#        password: root
-#  jpa:
-#    database-platform: org.hibernate.dialect.H2Dialect
-#    show-sql: true
-#    hibernate:
-#      ddl-auto: update
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
 
 logging.config: classpath:logback.xml
 
 mybatis-plus:
-  # 如果是放在src/main/java目录下 classpath:com/yourpackage/*/mapper/*Mapper.xml
-  # 如果是放在resource目录 classpath:mapper/*Mapper.xml
   mapper-locations: classpath:mapper/*.xml
-  #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.lind.basic.entity.mybatis
+  typeAliasesPackage: com.lind.basic.mybatis
   global-config:
     #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局 唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
-    id-type: 0
+    id-type: 1
     #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
     field-strategy: 2
     #驼峰下划线转换
@@ -180,12 +72,3 @@ config-attributes:
       age: 21
     - name: caven
       age: 31
-
-logging:
-  level:
-    #org.springframework.web: debug #对这些包进行日志
-    #org.springframework.security: DEBUG
-    com.lind.basic: INFO
-  path: logs/ #日志持久化的文件位置
-  file:
-    max-size: 1GB

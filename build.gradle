@@ -274,19 +274,20 @@ dependencies {
     compile group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
     compile('io.springfox:springfox-swagger2:2.6.1')
     compile('io.springfox:springfox-swagger-ui:2.6.1')
-
+    compile('com.baomidou:mybatis-plus-boot-starter:2.3.3')
 
     testCompile 'pl.allegro.tech:embedded-elasticsearch:2.5.0'
     testCompile(
             'org.springframework.boot:spring-boot-starter-test',
             'com.github.kstyrc:embedded-redis:0.6',
-            'de.flapdoodle.embed:de.flapdoodle.embed.mongo',
+            //  'de.flapdoodle.embed:de.flapdoodle.embed.mongo',//单元测试时会自动下载mongo包，有时间下载不动先注释了
             'com.github.fridujo:rabbitmq-mock:1.0.10',
             'commons-io:commons-io:2.5',
             'org.springframework.boot:spring-boot-starter-data-mongodb',
             'org.springframework.boot:spring-boot-starter-amqp',
             'org.springframework.boot:spring-boot-starter-cache',
             'org.springframework.boot:spring-boot-starter-data-elasticsearch',
-
+            'com.h2database:h2',
+            'mysql:mysql-connector-java:8.0.11',
     )
 }

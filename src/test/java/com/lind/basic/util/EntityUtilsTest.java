@@ -1,13 +1,9 @@
 package com.lind.basic.util;
 
-import com.lind.basic.model.User;
 import java.util.HashMap;
 import java.util.Map;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+
+import com.lind.basic.mybatis.UserInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
@@ -17,8 +13,8 @@ public class EntityUtilsTest {
   public void mapToEntity() {
     Map<String, Object> map = new HashMap<>();
     map.put("id", 1);
-    map.put("username", "zzl");
-    User user = EntityUtils.convertMapToObject(map, User.class);
+    map.put("name", "zzl");
+    UserInfo user = EntityUtils.convertMapToObject(map, UserInfo.class);
     logger.info("map to entity {}", user);
   }
 

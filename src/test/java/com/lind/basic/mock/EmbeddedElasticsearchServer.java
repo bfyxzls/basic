@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import pl.allegro.tech.embeddedelasticsearch.EmbeddedElastic;
 import pl.allegro.tech.embeddedelasticsearch.PopularProperties;
 
-@Component
+//@Component 先注释，这个zip包总是下载失败
 public class EmbeddedElasticsearchServer {
   @Autowired
   EmbeddedElastic embeddedElastic;

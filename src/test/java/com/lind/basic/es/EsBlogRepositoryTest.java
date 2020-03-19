@@ -14,43 +14,43 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class EsBlogRepositoryTest {
 
-  @Autowired
-  private EsBlogRepository esBlogRepository;
+    @Autowired
+    private EsBlogRepository esBlogRepository;
 
-  @Before
-  public void initRepositoryData() {
+    @Before
+    public void initRepositoryData() {
 
-    //清除所有的数据
-    esBlogRepository.deleteAll();
-    //初始化数据
-    esBlogRepository.save(new EsBlog(
-        "computer",
-        "it device",
-        "Most great product"));
-    esBlogRepository.save(new EsBlog(
-        "mobile",
-        "call device",
-        "Fastest development product"));
-    esBlogRepository.save(new EsBlog(
-        "note pc",
-        "it device",
-        "Most Popular product"));
-  }
-
-  @Test
-  public void testFindDistinctEsBlogByTitleContainingOrSummaryContainingOrContentContaining() {
-    Pageable pageable = PageRequest.of(0, 20);
-
-    String title = "computer";
-    String summary = "call";
-    String content = "发明";
-
-    Page<EsBlog> page = esBlogRepository.findByTitleContainingOrSummaryContainingOrContentContaining(title, summary, content, pageable);
-    System.out.println("------------start 1");
-    for (EsBlog blog : page) {
-      System.out.println(blog.toString());
+        //清除所有的数据
+        esBlogRepository.deleteAll();
+        //初始化数据
+        esBlogRepository.save(new EsBlog(
+                "computer",
+                "it device",
+                "Most great product"));
+        esBlogRepository.save(new EsBlog(
+                "mobile",
+                "call device",
+                "Fastest development product"));
+        esBlogRepository.save(new EsBlog(
+                "note pc",
+                "it device",
+                "Most Popular product"));
     }
-    System.out.println("------------end 1");
-  }
+
+    @Test
+    public void testFindDistinctEsBlogByTitleContainingOrSummaryContainingOrContentContaining() {
+        Pageable pageable = PageRequest.of(0, 20);
+
+        String title = "computer";
+        String summary = "call";
+        String content = "发明";
+
+        Page<EsBlog> page = esBlogRepository.findByTitleContainingOrSummaryContainingOrContentContaining(title, summary, content, pageable);
+        System.out.println("------------start 1");
+        for (EsBlog blog : page) {
+            System.out.println(blog.toString());
+        }
+        System.out.println("------------end 1");
+    }
 
 }

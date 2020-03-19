@@ -1,4 +1,4 @@
-package com.lind.basic.Assert;
+package com.lind.basic.asserts;
 
 import java.util.Arrays;
 import org.junit.Test;
