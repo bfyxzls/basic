@@ -12,8 +12,8 @@ import org.springframework.test.context.ActiveProfiles;
 /**
  * 多数据源时，H2的datasource声明
  */
-//@Configuration
-//@ActiveProfiles("test")
+@Configuration
+@ActiveProfiles("test")
 public class H2Mock {
   @Value("${h2.dbName:Test1}")
   String dbName;

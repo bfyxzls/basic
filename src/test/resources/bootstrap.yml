@@ -9,11 +9,11 @@ spring:
       cluster-name: docker-cluster
       cluster-nodes: 127.0.0.1:9300
 
-  datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false
-    username: root
-    password: root
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false
+#    username: root
+#    password: root
 
 logging.config: classpath:logback.xml
 

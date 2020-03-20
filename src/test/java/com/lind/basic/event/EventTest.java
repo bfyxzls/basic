@@ -17,7 +17,6 @@ public class EventTest {
   private ApplicationContext context;
 
   @Test
-  @Transactional
   public void orderEvent() {
     context.publishEvent(new OrderEvent("ok"));
   }
