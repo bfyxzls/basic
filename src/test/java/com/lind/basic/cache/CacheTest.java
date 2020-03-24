@@ -24,6 +24,8 @@ public class CacheTest {
     commonService.add("ok");
     // 这条从缓存读取
     commonService.get("ok");
+    commonService.get("ok");
+
     // 删除缓存
     commonService.delete("ok");
     // 不走缓存
