@@ -7,11 +7,15 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Slf4j
-public class EmailApplicationListener implements ApplicationListener<OrderEvent> {
+public class EmailApplicationListener {
 
-  @Override
   @EventListener
-  public void handler(OrderEvent eventObject) {
+  public void handlerOrderEvent(OrderEvent eventObject) {
     logger.info("同步事件-电子邮件的事件：{},时间：{}", eventObject.getMsg(), LocalDateTime.now());
+  }
+
+  @EventListener
+  public void handlerRegisterUserEvent(RegisterUserEvent eventObject) {
+    logger.info("同步事件-电子邮件的事件：{},时间：{}", eventObject.getUsername(), LocalDateTime.now());
   }
 }
