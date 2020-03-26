@@ -38,21 +38,8 @@ apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
-apply plugin: 'checkstyle'
 sourceCompatibility = 1.8
 
-
-checkstyle {
-    ignoreFailures = false
-    maxWarnings = 0
-    maxErrors = 0
-
-    dependencies {
-        checkstyle "com.puppycrawl.tools:checkstyle:8.8"
-        checkstyle "com.google.guava:guava:23.5-jre"
-    }
-
-}
 tasks.withType(Checkstyle) {
     reports {
         xml.enabled false
@@ -126,47 +113,6 @@ dependencies {
     )
 }
 
-// 类型项目需要是非启动项目，所以有以下设置
-bootJar.enabled = false // 不要求启动项目，不需要main方法
-jar.enabled = true // 需要在build/libs下生成jar文件
-check.dependsOn test // test之前先检测代码样式
-
-apply plugin: "maven-publish"
-task sourceJar(type: Jar) {
-    // main程序代码会打包，而test模型不会被打进包里
-    from sourceSets.main.allJava
-    //classifier "sources" // 是否生成java源文件 (生成的jar包后面加上sources, 如: jlib-2.2.11-sources.jar)
-}
-publishing {
-    publications {
-        maven(MavenPublication) {
-            //打包源码和class
-            from components.java    //发布java组件
-            //定义源码task,这个与classifier "sources"对应
-            //artifact sourceJar
-        }
-    }
-
-    //定义目标仓库 (包所存放的地方)
-    repositories {
-        // 本地仓库
-        mavenLocal()
-
-        // 远程仓库
-        maven {
-            if (project.version.endsWith('-SNAPSHOT')) {
-                url = "https://repo.rdc.aliyun.com/repository/44454-snapshot-Ejfhso"
-            } else {
-                url = "https://repo.rdc.aliyun.com/repository/44454-release-3afmGw"
-            }
-            credentials {
-                username 'fTMcrA'
-                password 'uCQE7YXL3d'
-            }
-        }
-    }
-}
-
 buildscript {
     ext {
         springBootVersion = '2.0.6.RELEASE'
@@ -185,12 +131,7 @@ buildscript {
             url "https://plugins.gradle.org/m2/"
         }
         mavenCentral()
-        dependencies {
-            classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-            classpath('se.transmode.gradle:gradle-docker:1.2')
-
-        }
-    }
+     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
@@ -204,31 +145,11 @@ group 'com.lind'
 version '1.2.3'
 
 apply plugin: 'java'
-apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
-apply plugin: 'checkstyle'
+
 sourceCompatibility = 1.8
 
-
-checkstyle {
-    ignoreFailures = false
-    maxWarnings = 0
-    maxErrors = 0
-
-    dependencies {
-        checkstyle "com.puppycrawl.tools:checkstyle:8.8"
-        checkstyle "com.google.guava:guava:23.5-jre"
-    }
-
-}
-tasks.withType(Checkstyle) {
-    reports {
-        xml.enabled false
-        html.enabled true
-        html.stylesheet resources.text.fromFile('config/xsl/checkstyle-simple.xsl')
-    }
-}
 
 dependencyManagement {
     imports {

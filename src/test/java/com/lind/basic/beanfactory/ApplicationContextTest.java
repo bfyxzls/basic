@@ -12,11 +12,7 @@ import java.net.URL;
 public class ApplicationContextTest {
     @Test
     public void classLoads() {
-        URL[] urls = sun.misc.Launcher.getBootstrapClassPath().getURLs();
-        for (URL url : urls) {
-            System.out.println(url.toExternalForm());
-        }
-    }
+          }
 
     @Test
     public void loadBeanXml() {

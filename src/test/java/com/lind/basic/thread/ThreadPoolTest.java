@@ -81,7 +81,7 @@ public class ThreadPoolTest {
   }
 
   /**
-   * newScheduledThreadPool两种方式不同的地方是任务的执行时间，如果间隔时间大于任务的执行时间，任务不受执行时间的影响。如果间隔时间小于任务的执行时间，那么任务执行结束之后，会立马执行，至此间隔时间就会被打乱
+   * newScheduledThreadPool按着时间间隔进行周期性任务
    */
   @Test
   public void newScheduledThreadPool() throws InterruptedException {
