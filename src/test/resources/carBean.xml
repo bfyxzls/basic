@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--若没写id，则默认为com.test.Man#0,#0为一个计数形式-->
+    <bean id="car" class="com.lind.basic.beanfactory.CarFactoryBean">
+    <property name="carInfo" value="gh2,12,22"></property>
+    </bean>
+</beans>
