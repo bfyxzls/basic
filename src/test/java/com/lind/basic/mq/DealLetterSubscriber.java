@@ -18,6 +18,8 @@ import org.springframework.test.context.ActiveProfiles;
 public class DealLetterSubscriber {
   public static final String LIND_DL_EXCHANGE = "test.basic.dl.exchange";
   public static final String LIND_DEAD_QUEUE = "test.basic.queue.dead";
+  public static final String LIND_EXCHANGE = "test.basic.exchange";
+  public static final String LIND__NORMAL_QUEUE = "test.basic.order";
 
   /**
    * 创建死信交换机.
@@ -26,6 +28,27 @@ public class DealLetterSubscriber {
   public TopicExchange lindExchangeDl() {
     return (TopicExchange) ExchangeBuilder.topicExchange(LIND_DL_EXCHANGE).durable(true)
         .build();
+  }
+
+  /**
+   * 创建普通交换机.
+   */
+  @Bean
+  public TopicExchange lindExchange() {
+    return (TopicExchange) ExchangeBuilder.topicExchange(LIND_EXCHANGE).durable(true)
+            .build();
+  }
+
+  /**
+   * 创建普通队列.
+   */
+  @Bean
+  public Queue lindNeedDealLetterQueue() {
+    return QueueBuilder.durable(LIND__NORMAL_QUEUE)
+            .withArgument("x-dead-letter-exchange", DealLetterSubscriber.LIND_DL_EXCHANGE)//设置死信交换机
+            .withArgument("x-message-ttl", 60)
+            .withArgument("x-dead-letter-routing-key", DealLetterSubscriber.LIND_DEAD_QUEUE)//设置死信routingKey
+            .build();
   }
 
   /**
@@ -39,11 +62,13 @@ public class DealLetterSubscriber {
   /**
    * 绑定死信队列.
    */
+
   @Bean
   public Binding bindDeadBuilders() {
-    return BindingBuilder.bind(lindDelayQueue())
-        .to(lindExchangeDl())
-        .with(LIND_DEAD_QUEUE);
+    Binding with = BindingBuilder.bind(lindDelayQueue())
+            .to(lindExchangeDl())
+            .with(LIND_DEAD_QUEUE);
+    return with;
   }
 
   /**

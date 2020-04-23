@@ -16,124 +16,7 @@ buildscript {
             url "https://plugins.gradle.org/m2/"
         }
         mavenCentral()
-        dependencies {
-            classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-            classpath('se.transmode.gradle:gradle-docker:1.2')
-
-        }
     }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-    }
-
-
-    ext {
-        springCloudVersion = 'Finchley.SR1'
-    }
-}
-group 'com.lind'
-version '1.2.3'
-
-apply plugin: 'java'
-apply plugin: 'idea'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
-sourceCompatibility = 1.8
-
-tasks.withType(Checkstyle) {
-    reports {
-        xml.enabled false
-        html.enabled true
-        html.stylesheet resources.text.fromFile('config/xsl/checkstyle-simple.xsl')
-    }
-}
-
-dependencyManagement {
-    imports {
-        // spring bom helps us to declare dependencies without specifying version numbers.
-        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-    }
-}
-repositories {
-    mavenLocal()
-    maven {
-        name "aliyun1"
-        url 'http://maven.aliyun.com/nexus/content/groups/public'
-    }
-    maven {
-        name "aliyun2"
-        url 'http://maven.aliyun.com/mvn/repository/'
-    }
-    mavenCentral()
-}
-
-dependencies {
-    compile(
-            'org.springframework.cloud:spring-cloud-context',
-            'org.springframework.boot:spring-boot-starter-web',
-            'org.springframework.boot:spring-boot-starter-webflux',
-            'org.springframework.boot:spring-boot-starter-data-redis',
-            'org.springframework.boot:spring-boot-starter-actuator',
-            'org.springframework.cloud:spring-cloud-starter-openfeign',
-            'org.apache.commons:commons-lang3:3.5',
-            'commons-collections:commons-collections:3.2.2',
-            'org.apache.poi:poi-ooxml:4.1.1',
-            'redis.clients:jedis',
-            'com.google.guava:guava:24.1-jre',
-            'com.google.zxing:core:3.3.2',
-            'com.google.zxing:javase:3.3.2',
-            'com.alibaba:fastjson:1.2.35',
-            'org.springframework.boot:spring-boot-starter-aop',
-            'org.apache.poi:poi:3.14',
-
-            'org.apache.poi:poi-scratchpad:3.14',
-            'org.apache.poi:poi-ooxml:3.14',
-
-            'fr.opensagres.xdocreport:xdocreport:1.0.6',
-            'org.apache.poi:poi-ooxml-schemas:3.14',
-            'org.apache.poi:ooxml-schemas:1.3',
-            'org.jsoup:jsoup:1.11.3'
-    )
-    compileOnly('org.projectlombok:lombok')
-    testCompileOnly('org.projectlombok:lombok')
-    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
-    compile group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
-    compile('io.springfox:springfox-swagger2:2.6.1')
-    compile('io.springfox:springfox-swagger-ui:2.6.1')
-    compile('io.jsonwebtoken:jjwt:0.9.0')
-    testCompile(
-            'org.springframework.boot:spring-boot-starter-test',
-            'com.github.kstyrc:embedded-redis:0.6',
-//            'de.flapdoodle.embed:de.flapdoodle.embed.mongo',
-            'com.github.fridujo:rabbitmq-mock:1.0.10',
-            'commons-io:commons-io:2.5',
-            'org.springframework.boot:spring-boot-starter-data-mongodb',
-            'org.springframework.boot:spring-boot-starter-amqp',
-            'org.springframework.boot:spring-boot-starter-cache',
-            'org.springframework.boot:spring-boot-starter-data-elasticsearch',
-
-    )
-}
-
-buildscript {
-    ext {
-        springBootVersion = '2.0.6.RELEASE'
-    }
-    repositories {
-        mavenLocal()
-        maven {
-            name "aliyun1"
-            url 'http://maven.aliyun.com/nexus/content/groups/public'
-        }
-        maven {
-            name "aliyun2"
-            url 'http://maven.aliyun.com/mvn/repository/'
-        }
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
-        mavenCentral()
-     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
@@ -188,7 +71,16 @@ dependencies {
             'com.google.zxing:core:3.3.2',
             'com.google.zxing:javase:3.3.2',
             'com.alibaba:fastjson:1.2.35',
-            'org.springframework.boot:spring-boot-starter-aop'
+            'org.springframework.boot:spring-boot-starter-aop',
+
+            'org.apache.poi:poi-ooxml:4.1.1',
+            'org.apache.poi:poi:3.14',
+            'org.apache.poi:poi-scratchpad:3.14',
+            'org.apache.poi:poi-ooxml:3.14',
+            'fr.opensagres.xdocreport:xdocreport:1.0.6',
+            'org.apache.poi:poi-ooxml-schemas:3.14',
+            'org.apache.poi:ooxml-schemas:1.3',
+            'io.jsonwebtoken:jjwt:0.9.0',
 
     )
     compileOnly('org.projectlombok:lombok')
@@ -199,7 +91,7 @@ dependencies {
     compile('io.springfox:springfox-swagger-ui:2.6.1')
     compile('com.baomidou:mybatis-plus-boot-starter:2.3.3')
 
-    testCompile 'pl.allegro.tech:embedded-elasticsearch:2.5.0'
+//    testCompile 'pl.allegro.tech:embedded-elasticsearch:2.7.0'
     testCompile(
             'org.springframework.boot:spring-boot-starter-test',
             'com.github.kstyrc:embedded-redis:0.6',
