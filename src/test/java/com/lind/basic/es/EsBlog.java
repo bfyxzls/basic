@@ -1,65 +1,73 @@
 package com.lind.basic.es;
 
+import io.searchbox.annotations.JestId;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 import java.io.Serializable;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.elasticsearch.annotations.Document;
 
-@Document(indexName = "blog", type = "blog")
+@ToString
+@NoArgsConstructor
 public class EsBlog implements Serializable {
-  private static final long serialVersionUID = 1L;
-  @Id
-  private String id;
+    private static final long serialVersionUID = 1L;
+    @JestId
+    private String id;
+    private Long blogId;
+    private String summary;
 
-  private String summary;
+    private String content;
 
-  private String content;
+    private String title;
 
-  private String title;
+    public EsBlog(Long blogId, String summary, String content, String title) {
+        this.blogId = blogId;
+        this.summary = summary;
+        this.content = content;
+        this.title = title;
+    }
 
-  protected EsBlog() {
-    //JPA的规范要求无参构造函数;设为protected防止直接使用
-  }
+    public Long getBlogId() {
+        return blogId;
+    }
 
-  public EsBlog(String title, String summary, String content) {
+    public void setBlogId(Long blogId) {
+        this.blogId = blogId;
+    }
 
-    this.title = title;
-    this.summary = summary;
-    this.content = content;
-  }
+    public String getId() {
+        return id;
+    }
 
-  public String getId() {
-    return id;
-  }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-  public void setId(String id) {
-    this.id = id;
-  }
+    public String getTitle() {
+        return title;
+    }
 
-  public String getTitle() {
-    return title;
-  }
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-  public void setTitle(String title) {
-    this.title = title;
-  }
+    public String getSummary() {
+        return summary;
+    }
 
-  public String getSummary() {
-    return summary;
-  }
+    public void setSummary(String summary) {
+        this.summary = summary;
+    }
 
-  public void setSummary(String summary) {
-    this.summary = summary;
-  }
+    public String getContent() {
+        return content;
+    }
 
-  public String getContent() {
-    return content;
-  }
+    public void setContent(String content) {
+        this.content = content;
+    }
 
-  public void setContent(String content) {
-    this.content = content;
-  }
-
-  public String toString() {
-    return String.format("User[id=%s, title='%s', summary='%s', content='%s']", id, title, summary, content);
-  }
+    public String toString() {
+        return String.format("User[id=%s, title='%s', summary='%s', content='%s']", id, title, summary, content);
+    }
 }

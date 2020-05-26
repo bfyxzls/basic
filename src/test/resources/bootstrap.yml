@@ -4,11 +4,10 @@ spring:
   sleuth:
     sampler:
       probability: 1.0 #抽样
-  data:
+  datasource:
     elasticsearch:
-      cluster-name: docker-cluster
-      cluster-nodes: 127.0.0.1:9300
-
+      jest:
+        uris: http://localhost:9200
 #  datasource:
 #    driver-class-name: com.mysql.jdbc.Driver
 #    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false
