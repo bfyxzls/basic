@@ -7,6 +7,7 @@ import io.searchbox.client.JestResult;
 import io.searchbox.core.Index;
 import io.searchbox.core.Search;
 import io.searchbox.core.SearchResult;
+import io.searchbox.core.search.aggregation.TermsAggregation;
 import io.searchbox.indices.CreateIndex;
 import io.searchbox.indices.DeleteIndex;
 import io.searchbox.indices.mapping.GetMapping;
@@ -15,7 +16,10 @@ import org.apache.commons.collections.CollectionUtils;
 import org.elasticsearch.index.query.BoolQueryBuilder;
 import org.elasticsearch.index.query.Operator;
 import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.search.aggregations.AggregationBuilder;
+import org.elasticsearch.search.aggregations.AggregationBuilders;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
+import org.elasticsearch.search.sort.SortOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -69,10 +73,10 @@ public class MblogApplicationTests {
     @Test
     public void addDocument() throws IOException {
         List<EsBlog> esBlogList = new ArrayList<>();
-        esBlogList.add(new EsBlog(1L, "中国北京人", "北京人的事", "北京"));
-        esBlogList.add(new EsBlog(2L, "中国上海", "上海人", "上海"));
-        esBlogList.add(new EsBlog(3L, "美国芝加哥", "芝加哥人", "芝加哥"));
-        esBlogList.add(new EsBlog(4L, "日本东京人", "东京人", "东京"));
+        esBlogList.add(new EsBlog(1L, "从事互联网开发工作", "软件开发", "占占", 0, 30, "北京", "北京大兴"));
+        esBlogList.add(new EsBlog(2L, "有自己的产业", "体育人", "李宁", 0, 42, "上海", "上海虹口"));
+        esBlogList.add(new EsBlog(3L, "做项目，之前做过前端开发，喜欢交朋友", "项目经理", "Nina", 1, 25, "北京", "北京丰台"));
+        esBlogList.add(new EsBlog(4L, "从事设计工作多年，喜欢舞蹈", "设计师", "翠珠", 1, 31, "北京", "北京朝阳"));
 
         for (EsBlog item : esBlogList) {
             Index index = new Index.Builder(item)
@@ -144,13 +148,13 @@ public class MblogApplicationTests {
      */
     @Test
     public void findDocument() throws IOException {
-        String keyword = "中国";
+        String keyword = "舞蹈";
 
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
         BoolQueryBuilder boolQueryBuilder = QueryBuilders.boolQuery();
         boolQueryBuilder.must(QueryBuilders.matchQuery("summary", keyword).operator(Operator.AND));
         searchSourceBuilder.query(boolQueryBuilder);
-
+        searchSourceBuilder.sort("title.keyword", SortOrder.DESC);//一个字符串字段有两个类型，一个text类型，分词类型；一个keyword类型，不分词类型；所以加上.keyword就可以正常聚合了
         Search search = new Search.Builder(searchSourceBuilder.toString())
                 .addIndex(indexName)
                 .addType(typeName).build();
@@ -162,5 +166,30 @@ public class MblogApplicationTests {
             });
         }
         jestClient.shutdownClient();
+    }
+
+    /**
+     * es聚合操作.
+     */
+    @Test
+    public void aggregation() throws IOException {
+        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+        // 以gander为分组依据，再以city为二级分组依据，对结果进行计数
+        AggregationBuilder aggregationBuilder =
+                AggregationBuilders.terms("ganderAgg").field("gander").size(Integer.MAX_VALUE) //1
+                        .subAggregation(AggregationBuilders.terms("cityAgg").field("city.keyword").size(Integer.MAX_VALUE) //2
+                                .subAggregation(AggregationBuilders.count("totalNum").field("name.keyword"))); //3
+        searchSourceBuilder.aggregation(aggregationBuilder);
+        Search search = new Search.Builder(searchSourceBuilder.toString())
+                .addIndex(indexName)
+                .addType(typeName).build();
+        SearchResult gacResult = jestClient.execute(search);
+        List<TermsAggregation.Entry> buckets = gacResult.getAggregations().getTermsAggregation("ganderAgg").getBuckets();
+        if (CollectionUtils.isNotEmpty(buckets)) {
+            buckets.forEach(o -> {
+                logger.info("key:{},value:{}", o.getKey(), o.getCount());
+            });
+        }
+
     }
 }
