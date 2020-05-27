@@ -1,4 +1,4 @@
-package redis;
+package com.lind.basic.redis;
 
 import com.lind.basic.config.JedisLock;
 import lombok.SneakyThrows;
@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest()
 @ActiveProfiles("test")
 @Slf4j
-public class lockTest {
+public class RedisLockTest {
     @Autowired
     JedisLock jedisLock;
 

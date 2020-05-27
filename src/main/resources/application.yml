@@ -1,0 +1,52 @@
+server:
+  port: 8080
+
+management:
+  server:
+    port: 18080
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        #exclude: info,env,beans
+spring:
+  application:
+    name: com.lind.basic
+  profiles:
+    active: dev
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://172.17.0.22:30607/test?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      username: root
+      password: Bdyh@2019
+  elasticsearch:
+    jest:
+      uris: http://127.0.0.1:9200
+
+author: zhangzhanling
+passport:
+  type: md5
+  users:
+    admin
+    user
+  authrates: read,write #不能用双引号
+  default:
+    username: zzl
+    passworld: 123
+
+config-attributes:
+  value: 345                          #对应单个值
+  valueArray: 1,2,3,4,5,6,7,8,9      #对应数组
+  valueList:                         #对应list
+    -13579
+    -246810
+  valueMap:                          #对应map
+    name: lili
+    age: 20
+    sex: female
+  valueMapList:                      #对应list<map>
+    - name: bob
+      age: 21
+    - name: caven
+      age: 31
+

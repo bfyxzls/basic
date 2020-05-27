@@ -12,7 +12,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest()
-@Profile("test")
 @EnableAsync
 public class BasicApplicationTests {
 
