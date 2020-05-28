@@ -17,10 +17,13 @@ public class UserInfo {
     private Long id;
     private String name;
     private String email;
-    @TableField("created_on")
-    private Instant createOn;
-    @TableField("updated_on")
-    private Instant updatedOn;
+    @TableField("create_on")
+    private String createOn;
+    @TableField("update_on")
+    private String updatedOn;
     @TableField("is_delete")
     private Integer delete;
+    private Instant createTime;
+    private Instant updateTime;
+    private String tenantId;
 }

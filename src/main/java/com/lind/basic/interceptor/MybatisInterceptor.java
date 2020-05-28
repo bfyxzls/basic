@@ -1,5 +1,6 @@
 package com.lind.basic.interceptor;
 
+import com.lind.basic.interceptor.mybatis.GenerateSql;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.executor.statement.RoutingStatementHandler;
 import org.apache.ibatis.executor.statement.StatementHandler;
@@ -58,6 +59,18 @@ public class MybatisInterceptor implements Interceptor {
         }
         //通过反射修改sql语句
         //主要和业务代码有关
+        if ("INSERT".equals(sqlCommandType)){
+            sql = GenerateSql.generateInsertSql(sql,"1","1");
+        }
+        if ("UPDATE".equals(sqlCommandType)){
+            sql = GenerateSql.generateUpdateSql(sql,"1");
+        }
+        if ("DELETE".equals(sqlCommandType)){
+            sql = GenerateSql.generateDeleteSql(sql,"1");
+        }
+        if ("SELECT".equals(sqlCommandType)){
+            sql = GenerateSql.generateDeleteSql(sql,"1");
+        }
         Field field = boundSql.getClass().getDeclaredField("sql");
         field.setAccessible(true);
         field.set(boundSql, sql);
