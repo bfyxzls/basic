@@ -2,11 +2,13 @@ package com.lind.basic.entity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 
 @Getter
 @Builder
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @ApiModel("token授权")
 public class Token {
   @ApiModelProperty(value = "令牌部分")
