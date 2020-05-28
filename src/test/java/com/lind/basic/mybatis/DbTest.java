@@ -1,6 +1,8 @@
 package com.lind.basic.mybatis;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.lind.basic.entity.UserInfo;
+import com.lind.basic.mapper.UserMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;

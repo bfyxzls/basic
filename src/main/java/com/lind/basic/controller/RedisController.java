@@ -6,6 +6,7 @@ import com.lind.basic.entity.Token;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,7 +23,7 @@ public class RedisController {
     RedisTemplate redisTemplate;
 
     @GetMapping("set")
-    public String set() throws JsonProcessingException {
+    public ResponseEntity set() throws JsonProcessingException {
         Token token = Token.builder()
                 .credentials("ok")
                 .region("hello")
@@ -31,22 +32,22 @@ public class RedisController {
         redisTemplate.opsForHash().put("author", "zzl", token);
         redisTemplate.opsForList().leftPush("star", token);
         redisTemplate.opsForList().leftPush("star", "1-star");
-        return "OK";
+        return ResponseEntity.ok("OK");
     }
 
     @GetMapping("get")
-    public Token get() throws IOException {
-        return (Token) redisTemplate.opsForValue().get("test:user");
+    public ResponseEntity get() throws IOException {
+        return ResponseEntity.ok((Token) redisTemplate.opsForValue().get("test:user"));
     }
 
     @GetMapping("get-hash")
-    public Token getHash() throws IOException {
-        return (Token) redisTemplate.opsForHash().get("author", "zzl");
+    public ResponseEntity getHash() throws IOException {
+        return ResponseEntity.ok((Token) redisTemplate.opsForHash().get("author", "zzl"));
     }
 
     @GetMapping("get-list")
-    public Object getList() throws IOException {
-        return redisTemplate.opsForList().leftPop("star");
+    public ResponseEntity getList() throws IOException {
+        return ResponseEntity.ok(redisTemplate.opsForList().leftPop("star"));
     }
 
 }

@@ -3,7 +3,7 @@ package com.lind.basic.util;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.lind.basic.mybatis.UserInfo;
+import com.lind.basic.entity.UserInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 

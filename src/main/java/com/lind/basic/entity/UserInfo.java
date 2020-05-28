@@ -1,4 +1,4 @@
-package com.lind.basic.mybatis;
+package com.lind.basic.entity;
 
 
 import com.baomidou.mybatisplus.annotations.TableField;
