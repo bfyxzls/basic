@@ -92,7 +92,7 @@ dependencies {
     compile 'org.elasticsearch:elasticsearch:6.5.4'
     compileOnly('org.projectlombok:lombok')
     testCompileOnly('org.projectlombok:lombok')
-
+    compile files('libs/aspose-words-15.8.0-jdk16.jar')
     testCompile(
             'org.springframework.boot:spring-boot-starter-test',
             'com.github.kstyrc:embedded-redis:0.6',

@@ -15,8 +15,8 @@ import redis.embedded.RedisServer;
 /**
  * redis模拟.
  */
-@ActiveProfiles("test")
-@Configuration
+//@ActiveProfiles("test")
+//@Configuration
 public class RedisServerMock {
 
   private RedisServer redisServer;

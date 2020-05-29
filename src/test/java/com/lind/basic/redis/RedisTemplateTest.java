@@ -18,7 +18,9 @@ public class RedisTemplateTest {
     @Test
     public void stringSetGet() {
         redisTemplate.opsForValue().set("test:user", new User("zzl", "lind@sina.com"));
-        logger.info("user {}",redisTemplate.opsForValue().get("test:user"));
+        redisTemplate.opsForValue().set("test:lind", new User("zzl", "lind@sina.com"));
+
+        logger.info("user {}", redisTemplate.opsForValue().get("test:user"));
     }
 
 

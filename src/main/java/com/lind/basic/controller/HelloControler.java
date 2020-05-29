@@ -14,15 +14,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @Api("欢迎接口")
 public class HelloControler {
-    @Autowired
-    UserMapper userMapper;
-
-    @GetMapping("db")
-    public ResponseEntity db() {
-        EntityWrapper<UserInfo> entityWrapper = new EntityWrapper<>();
-        entityWrapper.eq("name", "zhz修改了修改了");
-        return ResponseEntity.ok(userMapper.selectList(entityWrapper));
-    }
 
     @ApiOperation(value = "获取列表", notes = "获取用户欢迎列表")
     @GetMapping(value = "/hello")

@@ -25,8 +25,8 @@ public class DbTest {
     @Test()
     public void insert() {
         UserInfo user = new UserInfo();
-        user.setCreateOn(Instant.now());
-        user.setUpdatedOn(Instant.now());
+        user.setCreateOn("lind");
+        user.setUpdatedOn("lind");
         user.setDelete(0);
         user.setEmail("test@sina.com");
         user.setName("lind");
@@ -41,8 +41,8 @@ public class DbTest {
     @Transactional
     public void transactional() {
         UserInfo user = new UserInfo();
-        user.setCreateOn(Instant.now());
-        user.setUpdatedOn(Instant.now());
+        user.setCreateOn("zzl");
+        user.setUpdatedOn("lr");
         user.setDelete(0);
         user.setEmail("test@sina.com");
         user.setName("lind");

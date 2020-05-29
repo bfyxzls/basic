@@ -85,7 +85,7 @@ public class WordTest extends BaseTest {
     XWPFDocument document = new XWPFDocument();
 
     //Write the Document in file system
-    FileOutputStream out = new FileOutputStream(getResource("fontstyle.docx"));
+    FileOutputStream out = new FileOutputStream(getResource("fontstyle.docx"),true);
 
     //create paragraph
     XWPFParagraph paragraph = document.createParagraph();
@@ -95,7 +95,7 @@ public class WordTest extends BaseTest {
     paragraphOneRunOne.setBold(true);
     paragraphOneRunOne.setItalic(true);
     paragraphOneRunOne.setText("Font Style");
-    paragraphOneRunOne.addBreak();
+    //paragraphOneRunOne.addBreak();
 
     //Set text Position
     XWPFRun paragraphOneRunTwo = paragraph.createRun();

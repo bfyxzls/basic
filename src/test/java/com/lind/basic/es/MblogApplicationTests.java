@@ -87,6 +87,24 @@ public class MblogApplicationTests {
 
     }
 
+    /**
+     * 初始化数据.
+     *
+     * @throws IOException
+     */
+    @Test
+    public void addDocument2() throws IOException {
+        List<EsBlog> esBlogList = new ArrayList<>();
+        esBlogList.add(new EsBlog(1L, "从事数据库开发工作", "DBA", "占大师", 0, 35, "北京", "北京房山"));
+
+        for (EsBlog item : esBlogList) {
+            Index index = new Index.Builder(item)
+                    .index(indexName)
+                    .type(typeName).build();
+            jestClient.execute(index);
+        }
+
+    }
 
     /**
      * 删除索引.
@@ -148,12 +166,12 @@ public class MblogApplicationTests {
      */
     @Test
     public void findDocument() throws IOException {
-        String keyword = "舞蹈";
+        String keyword = "工作";
 
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
         BoolQueryBuilder boolQueryBuilder = QueryBuilders.boolQuery();
         boolQueryBuilder.must(QueryBuilders.matchQuery("summary", keyword).operator(Operator.AND));
-        searchSourceBuilder.query(boolQueryBuilder);
+        searchSourceBuilder.query(boolQueryBuilder).size(2);
         searchSourceBuilder.sort("title.keyword", SortOrder.DESC);//一个字符串字段有两个类型，一个text类型，分词类型；一个keyword类型，不分词类型；所以加上.keyword就可以正常聚合了
         Search search = new Search.Builder(searchSourceBuilder.toString())
                 .addIndex(indexName)

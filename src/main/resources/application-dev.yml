@@ -1,7 +1,8 @@
-spring.redis.host: 127.0.0.1
-spring.redis.port: 6379
-spring.redis.database: 0
-spring.redis.timeout: 10
-spring.redis.lettuce.pool.min-idle: 0 #lettuce连接池虽然多路复用，需要引用org.apache.commons:commons-pool2包,jedis连接池里的 redis实现是独立的，而lettuce里的redis实例可以在多线程中共享
-spring.redis.lettuce.pool.max-idle: 8
-spring.redis.lettuce.pool.max-active: 8
+spring:
+  redis:
+     host: localhost
+     port: 6379
+     database: 0
+#spring.redis.lettuce.pool.min-idle: 0 #lettuce连接池虽然多路复用，需要引用org.apache.commons:commons-pool2包,jedis连接池里的 redis实现是独立的，而lettuce里的redis实例可以在多线程中共享
+#spring.redis.lettuce.pool.max-idle: 8
+#spring.redis.lettuce.pool.max-active: 8
